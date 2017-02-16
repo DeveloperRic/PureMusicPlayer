@@ -1,0 +1,258 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+PureMusicPlayer
+</name>
+</assembly>
+<members>
+<member name="M:PureMusicPlayer.Track.Pause">
+ <summary>
+ Pause the current play back.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:PureMusicPlayer.Track.Resume">
+ <summary>
+ Resume the current play back if it is currently paused.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:PureMusicPlayer.Track.Stop">
+ <summary>
+ Stop the current file if it's playing.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:PureMusicPlayer.Track.Close">
+ <summary>
+ Close the file.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:PureMusicPlayer.Track.Wait">
+ <summary>
+ Halt the program until the .wav file is done playing.  Be careful, this will lock the entire program up until the
+ file is done playing.  It behaves as if the Windows Sleep API is called while the file is playing (and maybe it is, I don't
+ actually know, I'm just theorizing).  :P
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:PureMusicPlayer.Track.Milleseconds">
+ <summary>
+ Sets the audio file's time format via the mciSendString API.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:PureMusicPlayer.Track.Status">
+ <summary>
+ Gets the status of the current playback file via the mciSendString API.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:PureMusicPlayer.Track.FileSize">
+ <summary>
+ Gets the file size of the current audio file.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:PureMusicPlayer.Track.Channels">
+ <summary>
+ Gets the channels of the file via the mciSendString API.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:PureMusicPlayer.Track.Debug">
+ <summary>
+ Used for debugging purposes.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:PureMusicPlayer.Track.IsPaused">
+ <summary>
+ Whether or not the current playback is paused.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:PureMusicPlayer.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.album_cover_default">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.close_button">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.home_icon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.home_icon_hover">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.maximise_button">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.minimise_button">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.next_page_icon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.next_page_icon_hover">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.next_track_button">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.next_track_button_hover">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.pause_button">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.pause_button_hover">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.play_button">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.play_button_hover">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.prev_track_button">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.prev_track_button_hover">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.previous_page_icon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.previous_page_icon_hover">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.queue_button">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.queue_button_hover">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.repeat_icon_off">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.repeat_icon_on">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.shuffle_icon_off">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.shuffle_icon_on">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.upload_icon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.upload_icon_hover">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.volume_loud">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.volume_low">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.volume_medium">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.volume_mute">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+</members>
+</doc>
