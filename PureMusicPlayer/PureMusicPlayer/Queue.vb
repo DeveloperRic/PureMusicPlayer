@@ -10,7 +10,7 @@ Public Class Queue
     Public Class QueueData
         Public type As QueueType
         Public args As Object()
-        Public Sub New(ByVal type As QueueType, Optional ByVal args As Object() = Nothing)
+        Public Sub New(ByVal type As QueueType, ParamArray args As Object())
             With Me
                 .type = type
                 If args IsNot Nothing Then

@@ -1317,6 +1317,9 @@
   <data name="tilesBar.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 24</value>
   </data>
+  <data name="tilesBar.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>152, 0</value>
+  </data>
   <data name="tilesBar.Size" type="System.Drawing.Size, System.Drawing">
     <value>202, 634</value>
   </data>

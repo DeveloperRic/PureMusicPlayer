@@ -77,7 +77,13 @@ Public Class MainPlayer
                 AlbumArtists.Text = data.args(1)
                 AlbumTracks.Text = data.args(2)
                 AlbumCover.Image = data.args(3)
-                AlbumTracksFlow = New TrackList(data.args(4), AlbumTracksCollection, New Point(0, 0), AlbumTracksCollection.Size, New TrackList.TrackListData(TrackList.TrackListType.ALBUM, New Object() {data.args(0)}))
+                Dim tracks As List(Of Track) = data.args(4)
+                If tracks.Count = 1 Then
+                    AlbumLabel.Text = "SINGLE"
+                Else
+                    AlbumLabel.Text = "ALBUM"
+                End If
+                AlbumTracksFlow = New TrackList(tracks, AlbumTracksCollection, New Point(0, 0), AlbumTracksCollection.Size, New TrackList.TrackListData(TrackList.TrackListType.ALBUM, data.args(0)))
             Catch ex As Exception
             End Try
         ElseIf CurrentPage = MainPlayerPage.PLAYLIST Then
@@ -96,7 +102,7 @@ Public Class MainPlayer
             PlaylistArtists.Text = artists
             PlaylistCreated.Text = playlist.created
             PlaylistCover.display(playlist, PlaylistCoverImage)
-            PlaylistTracksFlow = New TrackList(playlist.tracks, PlaylistTracksCollection, New Point(0, 0), PlaylistTracksCollection.Size, New TrackList.TrackListData(TrackList.TrackListType.PLAYLIST, New Object() {playlist}))
+            PlaylistTracksFlow = New TrackList(playlist.tracks, PlaylistTracksCollection, New Point(0, 0), PlaylistTracksCollection.Size, New TrackList.TrackListData(TrackList.TrackListType.PLAYLIST, playlist))
         End If
         MainPlayerPages.SelectedIndex = CurrentPage
         updateNavigationButtons()
@@ -124,9 +130,6 @@ Public Class MainPlayer
     Private Sub WelcomeScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         init()
         colourWindows()
-        fadeInControl(tilesBar, 0.4)
-        Dim NPAnimation As New CompoundFadeAnimation(nowPlaying, 0.4)
-        NPAnimation.run()
         Dim hour As Integer = Date.Now.Hour
         If hour >= 0 And hour < 5 Then
             lblGreeting.Text = "Time for a late night music sesh."
@@ -171,9 +174,27 @@ Public Class MainPlayer
             PurePlayer.tileManager.addTile(TileManager.TileType.PLAYLIST, playlist.name, playlist)
             HplaylistCardReel.Controls.Add(New PlaylistCard(playlist))
         Next
+        PurePlayer.tileManager.addTile(TileManager.TileType.BLANK, "")
+        PurePlayer.tileManager.addTile(TileManager.TileType.DUMMY, "Albums")
+        Dim albums As New List(Of String)
+        For Each t As Track In Track.tracks
+            Dim found As Boolean
+            For Each album As String In albums
+                If t.Album.ToLower = album.ToLower Then
+                    found = True
+                    Exit For
+                End If
+            Next
+            If Not found Then
+                PurePlayer.tileManager.addTile(TileManager.TileType.ALBUM, t.Album, loadAlbumData(t.Album).args)
+                albums.Add(t.Album)
+            End If
+        Next
         If tilesBar.Width < 157 Then
             tilesBar.Width = 157
         End If
+        'fadeInControl(tilesBar, True, 255, False, 0.4) <-- Currently Broken, working on fixing
+        'fadeInControl(nowPlaying, True, 255, False, 30) <-- //
     End Sub
     Private Sub checkCur(ByVal cs As Control.ControlCollection)
         For Each c As Control In cs
@@ -243,9 +264,9 @@ Public Class MainPlayer
     Private Sub homePage_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles homePage.Paint
         Me.MainPlayerPages.Region = New Region(New RectangleF(MainPlayerPages.TabPages(0).Left, MainPlayerPages.TabPages(0).Top, MainPlayerPages.TabPages(0).Width, MainPlayerPages.TabPages(0).Height))
     End Sub
-    Private Sub fadeInControl(ByVal c As Control, Optional ByVal s As Decimal = 1, Optional ByVal a As Integer = 255)
-        Dim processor As New Animations.FadeAnimation(c, s, a)
-        processor.toggleProcessor(True)
+    Private Async Sub fadeInControl(ByVal control As Control, Optional ByVal fadeIn As Boolean = True, Optional ByVal finishAlpha As Integer = 255, Optional ByVal isForeColour As Boolean = False, Optional ByVal speed As Decimal = 1)
+        Dim animation As New CompoundFadeAnimation(control, fadeIn, finishAlpha, isForeColour, speed)
+        Await Task.Run(AddressOf animation.run)
     End Sub
     Private Sub musicView_DrawColumnHeader(ByVal sender As Object, ByVal e As DrawListViewColumnHeaderEventArgs)
         Dim strFormat As New StringFormat()
@@ -349,7 +370,7 @@ Public Class MainPlayer
             Exit Sub
         End If
         If trackAnim IsNot Nothing Then
-            trackAnim.toggleProcessor(False)
+            trackAnim.enabled = False
         End If
         If t.TrackName.Length <= 17 Then
             trackAnim = Nothing
@@ -358,11 +379,11 @@ Public Class MainPlayer
             trackAnim = New TextSlider(NPtrackName, t.TrackName)
         End If
         If trackAnim IsNot Nothing Then
-            trackAnim.toggleProcessor(True)
+            trackAnim.run()
         End If
         'Artist animator
         If artistAnim IsNot Nothing Then
-            artistAnim.toggleProcessor(False)
+            artistAnim.enabled = False
         End If
         If t.Artist.Length <= 17 Then
             artistAnim = Nothing
@@ -371,12 +392,12 @@ Public Class MainPlayer
             artistAnim = New TextSlider(NPartist, t.Artist)
         End If
         If artistAnim IsNot Nothing Then
-            artistAnim.toggleProcessor(True)
+            artistAnim.run()
         End If
         'Album animator
         Dim albumY As String = t.Album & " - " & t.Year
         If albumYAnim IsNot Nothing Then
-            albumYAnim.toggleProcessor(False)
+            albumYAnim.enabled = False
         End If
         If albumY.Length <= 17 Then
             albumYAnim = Nothing
@@ -385,7 +406,7 @@ Public Class MainPlayer
             albumYAnim = New TextSlider(NPalbumYear, albumY)
         End If
         If albumYAnim IsNot Nothing Then
-            albumYAnim.toggleProcessor(True)
+            albumYAnim.run()
         End If
         If t.AlbumCover Is Nothing Then
             GetAlbumCover(t)
@@ -621,18 +642,18 @@ Public Class MainPlayer
     Public QtrackList As TrackList
     Public Sub notifyQueue()
         If CurrentPage = MainPlayerPage.QUEUE Then
-            If queue IsNot Nothing Then
+            If Queue IsNot Nothing Then
                 Dim list As New List(Of Track)
-                list = queue.createQueueList
+                list = Queue.createQueueList
                 If QtrackList Is Nothing Then
-                    QtrackList = New TrackList(list, QtracksCollection, New Point(10, 90), New Size(1045, 480), New TrackList.TrackListData(TrackList.TrackListType.QUEUE, New Object() {Queue}))
+                    QtrackList = New TrackList(list, QtracksCollection, New Point(10, 90), New Size(1045, 480), New TrackList.TrackListData(TrackList.TrackListType.QUEUE, Queue))
                 Else
                     QtrackList.Tracks = list
                 End If
-                If queue._repeat Then
+                If Queue._repeat Then
                     QtrackList.addSpecialItem("-- Queue Repeats from here --")
-                    For i = 0 To queue.location
-                        QtrackList.addTrack(queue.tracks(i))
+                    For i = 0 To Queue.location
+                        QtrackList.addTrack(Queue.tracks(i))
                     Next
                 End If
                 Dim fromText As String = "PLAYING FROM "
@@ -698,16 +719,16 @@ Public Class MainPlayer
     Private Sub AlbumPlay_Click(sender As Object, e As EventArgs) Handles AlbumPlay.Click
         If CurrentPage = MainPlayerPage.ALBUM Then
             Dim data As MainPlayerPageData = CurrentPageWithData
-            If queue IsNot Nothing Then
+            If Queue IsNot Nothing Then
                 Queue.stop()
             Else
-                Queue = New Queue(New Queue.QueueData(Queue.QueueType.ALBUM, New Object() {data.args(0)}))
+                Queue = New Queue(New Queue.QueueData(Queue.QueueType.ALBUM, data.args(0)))
             End If
             Queue.tracks = data.args(4)
-            If queue.Shuffled Then
-                queue.shuffle(True)
+            If Queue.Shuffled Then
+                Queue.shuffle(True)
             End If
-            queue.play(, 0)
+            Queue.play(, 0)
         End If
     End Sub
 
@@ -717,7 +738,7 @@ Public Class MainPlayer
             If Queue IsNot Nothing Then
                 Queue.stop()
             Else
-                Queue = New Queue(New Queue.QueueData(Queue.QueueType.PLAYLIST, New Object() {playlist}))
+                Queue = New Queue(New Queue.QueueData(Queue.QueueType.PLAYLIST, playlist))
             End If
             Queue.tracks = playlist.tracks
             If Queue.Shuffled Then
@@ -747,5 +768,17 @@ Public Class MainPlayer
             page.Width = widthToSet
             page.Height = heightToSet
         Next
+    End Sub
+
+    Private Sub tilesBar_Resize(sender As Object, e As EventArgs) Handles tilesBar.Resize
+        If PurePlayer.tileManager IsNot Nothing Then
+            Dim maxTileWidth As Integer
+            For Each tile As Tile In PurePlayer.tileManager.tiles
+                If tile.Width > maxTileWidth Then
+                    maxTileWidth = tile.Width
+                End If
+            Next
+            tilesBar.Width = maxTileWidth
+        End If
     End Sub
 End Class

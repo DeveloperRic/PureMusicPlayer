@@ -7,7 +7,7 @@
     Public Class TrackListData
         Public type As TrackListType
         Public args As Object()
-        Public Sub New(ByVal type As TrackListType, Optional ByVal args As Object() = Nothing)
+        Public Sub New(ByVal type As TrackListType, ParamArray args As Object())
             With Me
                 .type = type
                 If args IsNot Nothing Then

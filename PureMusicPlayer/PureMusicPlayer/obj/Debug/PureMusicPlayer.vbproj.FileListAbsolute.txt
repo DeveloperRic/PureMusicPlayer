@@ -21,3 +21,4 @@ C:\Users\Victor Olaitan\Documents\Visual Studio 2015\Projects\PureMusicPlayer\Pu
 C:\Users\Victor Olaitan\Documents\Visual Studio 2015\Projects\PureMusicPlayer\PureMusicPlayer\obj\Debug\PureMusicPlayer.ImportTracks.resources
 C:\Users\Victor Olaitan\Documents\Visual Studio 2015\Projects\PureMusicPlayer\PureMusicPlayer\obj\Debug\PureMusicPlayer.PlaylistCover.resources
 C:\Users\Victor Olaitan\Documents\Visual Studio 2015\Projects\PureMusicPlayer\PureMusicPlayer\obj\Debug\PureMusicPlayer.PlaylistCard.resources
+C:\Users\Victor Olaitan\Documents\Visual Studio 2015\Projects\PureMusicPlayer\PureMusicPlayer\obj\Debug\PureMusicPlayer.WelcomeScreen.resources

@@ -186,11 +186,23 @@
             MainPlayer.Queue.play(, playLocation)
         End If
     End Sub
-    Shared MouseIsDown As Boolean = False
-    Shared Sub notifyMouseDown()
+    Dim MouseIsDown As Boolean = False
+    Private Sub notifyMouseDown()
         MouseIsDown = True
+        startLongPressTimer()
     End Sub
-    Public Sub notifyMouseUp()
+    Private Async Sub startLongPressTimer()
+        For i = 1 To 3
+            Await Task.Delay(1000)
+            If Not MouseIsDown Then
+                Exit Sub
+            End If
+        Next
+        If MouseIsDown Then
+            rightClickMenu.Show(MousePosition)
+        End If
+    End Sub
+    Private Sub notifyMouseUp()
         finishDrag()
         MouseIsDown = False
     End Sub
@@ -415,6 +427,7 @@
     End Property
 #End Region
     Public Sub handleClick(sender As Object, e As MouseEventArgs)
+        MouseIsDown = False
         If e.Button = MouseButtons.Right Then
             rightClickMenu.Show(MousePosition)
         End If
@@ -430,65 +443,7 @@
                 TrackInfo.track = Track.getTrack(path)
                 TrackInfo.refreshControls()
             Case "view album"
-                Dim org As Track = Track.getTrack(path)
-                Dim args As New List(Of Object)
-                MainPlayer.AlbumName.Text = org.Album
-                args.Add(org.Album)
-                Dim tracks As New List(Of Track)
-                Dim artists As String = ""
-                Dim songs As String = ""
-                For Each t As Track In Track.tracks
-                    If t.Album = org.Album Then
-                        tracks.Add(t)
-                        If Not artists.Contains(t.Artist) Then
-                            If artists = "" Then
-                                artists = t.Artist
-                            Else
-                                artists += ", " & t.Artist
-                            End If
-                        End If
-                        If songs = "" Then
-                            songs = t.TrackName
-                        Else
-                            songs += ", " & t.TrackName
-                        End If
-                    End If
-                Next
-                MainPlayer.AlbumArtists.Text = artists
-                args.Add(artists)
-                MainPlayer.AlbumTracks.Text = songs
-                args.Add(songs)
-                Dim cover As Image = Nothing
-                If tracks.Count > 0 Then
-                    cover = tracks(0).AlbumCover
-                    For Each t As Track In tracks
-                        If t.AlbumCover Is Nothing Then
-                            Continue For
-                        End If
-                        If cover Is Nothing Then
-                            cover = t.AlbumCover
-                            Continue For
-                        End If
-                        If t.AlbumCover.Width > cover.Width Or t.AlbumCover.Height > cover.Height Then
-                            cover = t.AlbumCover
-                        End If
-                    Next
-                End If
-                If cover IsNot Nothing Then
-                    MainPlayer.AlbumCover.Image = cover
-                Else
-                    cover = My.Resources.album_cover_default
-                    MainPlayer.AlbumCover.Image = My.Resources.album_cover_default
-                End If
-                args.Add(cover)
-                args.Add(tracks)
-                Dim data As New MainPlayer.MainPlayerPageData(MainPlayer.MainPlayerPage.ALBUM, args.ToArray)
-                MainPlayer.CurrentPageWithData = data
-                If MainPlayer.AlbumTracksFlow Is Nothing Then
-                    MainPlayer.AlbumTracksFlow = New TrackList(tracks, MainPlayer.AlbumTracksCollection, New Point(0, 0), MainPlayer.AlbumTracksCollection.Size, New TrackList.TrackListData(TrackList.TrackListType.ALBUM, New Object() {org.Album}))
-                Else
-                    MainPlayer.AlbumTracksFlow.Tracks = tracks
-                End If
+                MainPlayer.CurrentPageWithData = loadAlbumData(Track.getTrack(path).Album)
             Case "remove from playlist"
                 Dim playlist As Playlist = MainPlayer.CurrentPageWithData.args(0)
                 playlist.removeTrack(Track.getTrack(path))
@@ -514,7 +469,7 @@
         Dim data As New MainPlayer.MainPlayerPageData(MainPlayer.MainPlayerPage.PLAYLIST, args.ToArray)
         MainPlayer.CurrentPageWithData = data
         If MainPlayer.PlaylistTracksFlow Is Nothing Then
-            MainPlayer.PlaylistTracksFlow = New TrackList(playlist.tracks, MainPlayer.PlaylistTracksCollection, New Point(0, 0), MainPlayer.PlaylistTracksCollection.Size, New TrackList.TrackListData(TrackList.TrackListType.PLAYLIST, New Object() {playlist}))
+            MainPlayer.PlaylistTracksFlow = New TrackList(playlist.tracks, MainPlayer.PlaylistTracksCollection, New Point(0, 0), MainPlayer.PlaylistTracksCollection.Size, New TrackList.TrackListData(TrackList.TrackListType.PLAYLIST, playlist))
         Else
             MainPlayer.PlaylistTracksFlow.Tracks = playlist.tracks
         End If

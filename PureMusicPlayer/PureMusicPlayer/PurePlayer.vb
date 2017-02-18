@@ -271,4 +271,59 @@ Module PurePlayer
             MainPlayer.StatusStrip.Hide()
         End If
     End Sub
+
+    Public Function loadAlbumData(ByVal name As String) As MainPlayer.MainPlayerPageData
+        Dim args As New List(Of Object)
+        MainPlayer.AlbumName.Text = name
+        args.Add(name)
+        Dim tracks As New List(Of Track)
+        Dim artists As String = ""
+        Dim songs As String = ""
+        For Each t As Track In Track.tracks
+            If t.Album.ToLower = name.ToLower Then
+                tracks.Add(t)
+                If Not artists.Contains(t.Artist) Then
+                    If artists = "" Then
+                        artists = t.Artist
+                    Else
+                        artists += ", " & t.Artist
+                    End If
+                End If
+                If songs = "" Then
+                    songs = t.TrackName
+                Else
+                    songs += ", " & t.TrackName
+                End If
+            End If
+        Next
+        MainPlayer.AlbumArtists.Text = artists
+        args.Add(artists)
+        MainPlayer.AlbumTracks.Text = songs
+        args.Add(songs)
+        Dim cover As Image = Nothing
+        If tracks.Count > 0 Then
+            cover = tracks(0).AlbumCover
+            For Each t As Track In tracks
+                If t.AlbumCover Is Nothing Then
+                    Continue For
+                End If
+                If cover Is Nothing Then
+                    cover = t.AlbumCover
+                    Continue For
+                End If
+                If t.AlbumCover.Width > cover.Width Or t.AlbumCover.Height > cover.Height Then
+                    cover = t.AlbumCover
+                End If
+            Next
+        End If
+        If cover IsNot Nothing Then
+            MainPlayer.AlbumCover.Image = cover
+        Else
+            cover = My.Resources.album_cover_default
+            MainPlayer.AlbumCover.Image = My.Resources.album_cover_default
+        End If
+        args.Add(cover)
+        args.Add(tracks)
+        Return New MainPlayer.MainPlayerPageData(MainPlayer.MainPlayerPage.ALBUM, args.ToArray)
+    End Function
 End Module

@@ -27,7 +27,7 @@
         panel.Controls.Add(tile)
     End Sub
     Private Sub handleResize()
-        For Each ctrl In panel.Controls
+        For Each ctrl As Control In panel.Controls
             ctrl.Width = panel.ClientSize.Width - 20
         Next
     End Sub

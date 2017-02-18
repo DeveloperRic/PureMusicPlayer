@@ -148,6 +148,12 @@
     <Compile Include="TrackListView.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="WelcomeScreen.Designer.vb">
+      <DependentUpon>WelcomeScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WelcomeScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ImportTracks.resx">
@@ -182,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TrackListView.resx">
       <DependentUpon>TrackListView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WelcomeScreen.resx">
+      <DependentUpon>WelcomeScreen.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

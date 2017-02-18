@@ -11,12 +11,12 @@ Public Class TrackInfo
     Dim pathAnim As TextSlider
     Public Sub refreshControls()
         If pathAnim IsNot Nothing Then
-            pathAnim.toggleProcessor(False)
+            pathAnim.enabled = False
             pathAnim = Nothing
         End If
         If track.SongPath.Length > 70 Then
             pathAnim = New TextSlider(lblPath, track.SongPath, 1, 70)
-            pathAnim.toggleProcessor(True)
+            pathAnim.run()
         Else
             lblPath.Text = track.SongPath
         End If

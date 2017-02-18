@@ -69,12 +69,12 @@ Public Class ImportTracks
     Public Sub refreshControls()
         If tracks.Count > 0 Then
             If pathAnim IsNot Nothing Then
-                pathAnim.toggleProcessor(False)
+                pathAnim.enabled = False
                 pathAnim = Nothing
             End If
             If track.OrgPath.Length > 70 Then
                 pathAnim = New TextSlider(lblPath, track.OrgPath, 1, 70)
-                pathAnim.toggleProcessor(True)
+                pathAnim.run()
             Else
                 lblPath.Text = track.OrgPath
             End If
@@ -158,9 +158,13 @@ Public Class ImportTracks
     End Sub
 
     Private Sub closeBox_Click(sender As Object, e As EventArgs) Handles closeBox.Click
-        Dim result As MsgBoxResult = MsgBox("You have not edited your tracks!" & vbNewLine & "Exiting now will cause all tracks to be defaulted!" & vbNewLine & "Are you sure you want to do this?", MsgBoxStyle.YesNo)
-        If result = MsgBoxResult.Yes Then
-            finish()
+        If tracks.Count > 0 Then
+            Dim result As MsgBoxResult = MsgBox("You have not edited your tracks!" & vbNewLine & "Exiting now will cause all tracks to be defaulted!" & vbNewLine & "Are you sure you want to do this?", MsgBoxStyle.YesNo)
+            If result = MsgBoxResult.Yes Then
+                finish()
+            End If
+        Else
+            Me.Close()
         End If
     End Sub
 

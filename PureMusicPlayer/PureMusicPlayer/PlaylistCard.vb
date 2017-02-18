@@ -33,7 +33,7 @@
             End If
         End If
         PurePlayer.queue.stop()
-        PurePlayer.queue = New Queue(New Queue.QueueData(Queue.QueueType.PLAYLIST, New Object() {playlist}), playlist.tracks)
+        PurePlayer.queue = New Queue(New Queue.QueueData(Queue.QueueType.PLAYLIST, playlist), playlist.tracks)
         PurePlayer.queue.play(, 0)
         playPause.Image = My.Resources.pause_button_hover
     End Sub
