@@ -117,18 +117,42 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ProgressBar1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ProgressBar1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>42, 284</value>
+  </data>
+  <data name="ProgressBar1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>929, 46</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ProgressBar1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ProgressBar1.Name" xml:space="preserve">
+    <value>ProgressBar1</value>
+  </data>
+  <data name="&gt;&gt;ProgressBar1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ProgressBar1.Parent" xml:space="preserve">
+    <value>loadPage</value>
+  </data>
+  <data name="&gt;&gt;ProgressBar1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="loadPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="loadPage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="loadPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1018, 578</value>
+    <value>820, 579</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="loadPage.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
@@ -144,11 +168,41 @@
   <data name="&gt;&gt;loadPage.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="HsuggestionsCardReel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="HsuggestionsCardReel.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="HsuggestionsCardReel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 302</value>
+  </data>
+  <data name="HsuggestionsCardReel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>805, 275</value>
+  </data>
+  <data name="HsuggestionsCardReel.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;HsuggestionsCardReel.Name" xml:space="preserve">
+    <value>HsuggestionsCardReel</value>
+  </data>
+  <data name="&gt;&gt;HsuggestionsCardReel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;HsuggestionsCardReel.Parent" xml:space="preserve">
+    <value>homePage</value>
+  </data>
+  <data name="&gt;&gt;HsuggestionsCardReel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="HplaylistCardReel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="HplaylistCardReel.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 86</value>
   </data>
   <data name="HplaylistCardReel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1003, 210</value>
+    <value>805, 210</value>
   </data>
   <data name="HplaylistCardReel.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -166,46 +220,22 @@
     <value>homePage</value>
   </data>
   <data name="&gt;&gt;HplaylistCardReel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="HtracksCollection.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="HtracksCollection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 302</value>
-  </data>
-  <data name="HtracksCollection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1015, 309</value>
-  </data>
-  <data name="HtracksCollection.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;HtracksCollection.Name" xml:space="preserve">
-    <value>HtracksCollection</value>
-  </data>
-  <data name="&gt;&gt;HtracksCollection.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;HtracksCollection.Parent" xml:space="preserve">
-    <value>homePage</value>
-  </data>
-  <data name="&gt;&gt;HtracksCollection.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="lblGreeting2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblGreeting2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14.25pt</value>
+    <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="lblGreeting2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="lblGreeting2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 38</value>
+    <value>6, 37</value>
   </data>
   <data name="lblGreeting2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>318, 24</value>
+    <value>265, 20</value>
   </data>
   <data name="lblGreeting2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -265,7 +295,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="homePage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1018, 578</value>
+    <value>820, 579</value>
   </data>
   <data name="homePage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -284,6 +314,120 @@
   </data>
   <data name="&gt;&gt;homePage.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="lblYourMusicSub.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblYourMusicSub.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="lblYourMusicSub.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblYourMusicSub.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 50</value>
+  </data>
+  <data name="lblYourMusicSub.Size" type="System.Drawing.Size, System.Drawing">
+    <value>262, 20</value>
+  </data>
+  <data name="lblYourMusicSub.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblYourMusicSub.Text" xml:space="preserve">
+    <value>... Including Spotify and Soundcloud</value>
+  </data>
+  <data name="&gt;&gt;lblYourMusicSub.Name" xml:space="preserve">
+    <value>lblYourMusicSub</value>
+  </data>
+  <data name="&gt;&gt;lblYourMusicSub.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblYourMusicSub.Parent" xml:space="preserve">
+    <value>trackPage</value>
+  </data>
+  <data name="&gt;&gt;lblYourMusicSub.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblYourMusic.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblYourMusic.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 24pt, style=Bold</value>
+  </data>
+  <data name="lblYourMusic.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblYourMusic.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 13</value>
+  </data>
+  <data name="lblYourMusic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 37</value>
+  </data>
+  <data name="lblYourMusic.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblYourMusic.Text" xml:space="preserve">
+    <value>Your Music</value>
+  </data>
+  <data name="&gt;&gt;lblYourMusic.Name" xml:space="preserve">
+    <value>lblYourMusic</value>
+  </data>
+  <data name="&gt;&gt;lblYourMusic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblYourMusic.Parent" xml:space="preserve">
+    <value>trackPage</value>
+  </data>
+  <data name="&gt;&gt;lblYourMusic.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="HtracksCollection.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="HtracksCollection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 87</value>
+  </data>
+  <data name="HtracksCollection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>817, 497</value>
+  </data>
+  <data name="HtracksCollection.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;HtracksCollection.Name" xml:space="preserve">
+    <value>HtracksCollection</value>
+  </data>
+  <data name="&gt;&gt;HtracksCollection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;HtracksCollection.Parent" xml:space="preserve">
+    <value>trackPage</value>
+  </data>
+  <data name="&gt;&gt;HtracksCollection.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="trackPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="trackPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>820, 579</value>
+  </data>
+  <data name="trackPage.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="trackPage.Text" xml:space="preserve">
+    <value>Tracks</value>
+  </data>
+  <data name="&gt;&gt;trackPage.Name" xml:space="preserve">
+    <value>trackPage</value>
+  </data>
+  <data name="&gt;&gt;trackPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;trackPage.Parent" xml:space="preserve">
+    <value>MainPlayerPages</value>
+  </data>
+  <data name="&gt;&gt;trackPage.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="QplayingFrom.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -325,7 +469,7 @@
     <value>2, 51</value>
   </data>
   <data name="QtracksCollection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1015, 560</value>
+    <value>814, 560</value>
   </data>
   <data name="QtracksCollection.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -382,7 +526,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="queuePage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1018, 578</value>
+    <value>820, 579</value>
   </data>
   <data name="queuePage.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -400,7 +544,7 @@
     <value>MainPlayerPages</value>
   </data>
   <data name="&gt;&gt;queuePage.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="AlbumTracksCollection.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -426,32 +570,59 @@
   <data name="&gt;&gt;AlbumTracksCollection.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="AlbumPlay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="AlbumbtnOptions.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="AlbumPlay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 188</value>
+  <data name="AlbumbtnOptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>338, 189</value>
   </data>
-  <data name="AlbumPlay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 37</value>
+  <data name="AlbumbtnOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 36</value>
   </data>
-  <data name="AlbumPlay.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="AlbumbtnOptions.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
-  <data name="AlbumPlay.Text" xml:space="preserve">
-    <value>Play</value>
+  <data name="AlbumbtnOptions.Text" xml:space="preserve">
+    <value>Options</value>
   </data>
-  <data name="&gt;&gt;AlbumPlay.Name" xml:space="preserve">
-    <value>AlbumPlay</value>
+  <data name="&gt;&gt;AlbumbtnOptions.Name" xml:space="preserve">
+    <value>AlbumbtnOptions</value>
   </data>
-  <data name="&gt;&gt;AlbumPlay.Type" xml:space="preserve">
+  <data name="&gt;&gt;AlbumbtnOptions.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;AlbumPlay.Parent" xml:space="preserve">
+  <data name="&gt;&gt;AlbumbtnOptions.Parent" xml:space="preserve">
     <value>AlbumHeader</value>
   </data>
-  <data name="&gt;&gt;AlbumPlay.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;AlbumbtnOptions.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="AlbumbtnPlay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="AlbumbtnPlay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>238, 188</value>
+  </data>
+  <data name="AlbumbtnPlay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 37</value>
+  </data>
+  <data name="AlbumbtnPlay.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="AlbumbtnPlay.Text" xml:space="preserve">
+    <value>Play</value>
+  </data>
+  <data name="&gt;&gt;AlbumbtnPlay.Name" xml:space="preserve">
+    <value>AlbumbtnPlay</value>
+  </data>
+  <data name="&gt;&gt;AlbumbtnPlay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AlbumbtnPlay.Parent" xml:space="preserve">
+    <value>AlbumHeader</value>
+  </data>
+  <data name="&gt;&gt;AlbumbtnPlay.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="AlbumLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -484,7 +655,49 @@
     <value>AlbumHeader</value>
   </data>
   <data name="&gt;&gt;AlbumLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
+  </data>
+  <metadata name="AlbumMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>151, 3</value>
+  </metadata>
+  <data name="PlayToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 22</value>
+  </data>
+  <data name="PlayToolStripMenuItem.Text" xml:space="preserve">
+    <value>Play</value>
+  </data>
+  <data name="AlbumInfoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 22</value>
+  </data>
+  <data name="AlbumInfoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Edit album info</value>
+  </data>
+  <data name="AddToQueueToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 22</value>
+  </data>
+  <data name="AddToQueueToolStripMenuItem.Text" xml:space="preserve">
+    <value>Add to Queue</value>
+  </data>
+  <data name="AlbumtxtNewPlaylist.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="AlbumtxtNewPlaylist.ToolTipText" xml:space="preserve">
+    <value>New Playlist</value>
+  </data>
+  <data name="AddToPlaylistToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 22</value>
+  </data>
+  <data name="AddToPlaylistToolStripMenuItem.Text" xml:space="preserve">
+    <value>Add to Playlist</value>
+  </data>
+  <data name="AlbumMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 92</value>
+  </data>
+  <data name="&gt;&gt;AlbumMenuStrip.Name" xml:space="preserve">
+    <value>AlbumMenuStrip</value>
+  </data>
+  <data name="&gt;&gt;AlbumMenuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="AlbumCover.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -511,7 +724,7 @@
     <value>AlbumHeader</value>
   </data>
   <data name="&gt;&gt;AlbumCover.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="AlbumTracks.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -544,7 +757,7 @@
     <value>AlbumHeader</value>
   </data>
   <data name="&gt;&gt;AlbumTracks.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="AlbumName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -577,7 +790,7 @@
     <value>AlbumHeader</value>
   </data>
   <data name="&gt;&gt;AlbumName.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="AlbumArtists.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -610,7 +823,7 @@
     <value>AlbumHeader</value>
   </data>
   <data name="&gt;&gt;AlbumArtists.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="AlbumHeader.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -622,7 +835,7 @@
     <value>0, 255</value>
   </data>
   <data name="AlbumHeader.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1018, 255</value>
+    <value>820, 255</value>
   </data>
   <data name="AlbumHeader.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -646,7 +859,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="albumPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1018, 578</value>
+    <value>820, 579</value>
   </data>
   <data name="albumPage.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -664,7 +877,7 @@
     <value>MainPlayerPages</value>
   </data>
   <data name="&gt;&gt;albumPage.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="PlaylistTracksCollection.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -883,7 +1096,7 @@
     <value>0, 255</value>
   </data>
   <data name="PlaylistHeader.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1018, 255</value>
+    <value>820, 255</value>
   </data>
   <data name="PlaylistHeader.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -907,7 +1120,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="playlistPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1018, 578</value>
+    <value>820, 579</value>
   </data>
   <data name="playlistPage.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -925,13 +1138,58 @@
     <value>MainPlayerPages</value>
   </data>
   <data name="&gt;&gt;playlistPage.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
+  </data>
+  <data name="settingsFlowPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="settingsFlowPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>813, 573</value>
+  </data>
+  <data name="settingsFlowPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;settingsFlowPanel.Name" xml:space="preserve">
+    <value>settingsFlowPanel</value>
+  </data>
+  <data name="&gt;&gt;settingsFlowPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;settingsFlowPanel.Parent" xml:space="preserve">
+    <value>settingsPage</value>
+  </data>
+  <data name="&gt;&gt;settingsFlowPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="settingsPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="settingsPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>820, 579</value>
+  </data>
+  <data name="settingsPage.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="settingsPage.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="&gt;&gt;settingsPage.Name" xml:space="preserve">
+    <value>settingsPage</value>
+  </data>
+  <data name="&gt;&gt;settingsPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;settingsPage.Parent" xml:space="preserve">
+    <value>MainPlayerPages</value>
+  </data>
+  <data name="&gt;&gt;settingsPage.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="MainPlayerPages.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="MainPlayerPages.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 30</value>
+    <value>400, 29</value>
   </data>
   <data name="MainPlayerPages.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -940,7 +1198,7 @@
     <value>0, 0</value>
   </data>
   <data name="MainPlayerPages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1026, 604</value>
+    <value>828, 605</value>
   </data>
   <data name="MainPlayerPages.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -957,14 +1215,17 @@
   <data name="&gt;&gt;MainPlayerPages.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="HtilesList.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="HtilesList.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="HtilesList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 35</value>
+    <value>0, 0</value>
   </data>
   <data name="HtilesList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 599</value>
+    <value>200, 605</value>
   </data>
   <data name="HtilesList.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -981,32 +1242,35 @@
   <data name="&gt;&gt;HtilesList.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="Panel16.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="tilesBar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="Panel16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>79, 0</value>
+  <data name="tilesBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>200, 0</value>
   </data>
-  <data name="Panel16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 35</value>
+  <data name="tilesBar.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>152, 0</value>
   </data>
-  <data name="Panel16.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="tilesBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 605</value>
   </data>
-  <data name="&gt;&gt;Panel16.Name" xml:space="preserve">
-    <value>Panel16</value>
+  <data name="tilesBar.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="&gt;&gt;Panel16.Type" xml:space="preserve">
+  <data name="&gt;&gt;tilesBar.Name" xml:space="preserve">
+    <value>tilesBar</value>
+  </data>
+  <data name="&gt;&gt;tilesBar.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Panel16.Parent" xml:space="preserve">
-    <value>Panel14</value>
+  <data name="&gt;&gt;tilesBar.Parent" xml:space="preserve">
+    <value>panelSideDrawer</value>
   </data>
-  <data name="&gt;&gt;Panel16.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tilesBar.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tileNextPage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
+    <value>Top, Bottom</value>
   </data>
   <data name="tileNextPage.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1112,7 +1376,7 @@
     <value>NoControl</value>
   </data>
   <data name="tileNextPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>48, 6</value>
+    <value>170, 5</value>
   </data>
   <data name="tileNextPage.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -1133,7 +1397,7 @@
     <value>0</value>
   </data>
   <data name="tilePrevPage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
+    <value>Top, Bottom, Left</value>
   </data>
   <data name="tilePrevPage.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1240,7 +1504,7 @@
     <value>NoControl</value>
   </data>
   <data name="tilePrevPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 5</value>
+    <value>140, 5</value>
   </data>
   <data name="tilePrevPage.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
@@ -1261,16 +1525,13 @@
     <value>1</value>
   </data>
   <data name="Panel15.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
+    <value>Top</value>
   </data>
   <data name="Panel15.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="Panel15.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>79, 0</value>
-  </data>
   <data name="Panel15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 35</value>
+    <value>200, 35</value>
   </data>
   <data name="Panel15.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1282,341 +1543,16 @@
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Panel15.Parent" xml:space="preserve">
-    <value>Panel14</value>
+    <value>Panel12</value>
   </data>
   <data name="&gt;&gt;Panel15.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="Panel14.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="Panel14.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="Panel14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 35</value>
-  </data>
-  <data name="Panel14.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Panel14.Name" xml:space="preserve">
-    <value>Panel14</value>
-  </data>
-  <data name="&gt;&gt;Panel14.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel14.Parent" xml:space="preserve">
-    <value>tilesBar</value>
-  </data>
-  <data name="&gt;&gt;Panel14.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tilesBar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="tilesBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 24</value>
-  </data>
-  <data name="tilesBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 634</value>
-  </data>
-  <data name="tilesBar.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tilesBar.Name" xml:space="preserve">
-    <value>tilesBar</value>
-  </data>
-  <data name="&gt;&gt;tilesBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tilesBar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tilesBar.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="Panel2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="Panel2.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
-  </data>
-  <data name="NPalbumCover.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xMzQDW3oAAB0CSURBVHhe7d17
-        jJ5neSbwHEgbDgllOfUApGURaulWqx4o9LC76rZQshwK+1elav8bKFCogB6gZVnabluWbtRmt9XSQlMH
-        sm7i1nFwXIxFIkdBjhIliqLYzmgcy7Fsi1hGJrGMTBIngX2+fMMmmdx2/Mzh9Xff7++Sfop1tfk87/ON
-        noskM55zvvOd7wAAyYUlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQl
-        AJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIA
-        uYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBL
-        WAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQl
-        AJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIA
-        uYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBL
-        WAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQl
-        AJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIA
-        uYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBL
-        WAIAuYQlAJBLWAIAuYQlAJBLWFKPiIw30Z1APWFJPSIy3kR3AvWEJfWIyHgT3QnUE5bUIyLjTXQnUE9Y
-        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
-        v7L44YuUSXQnUE9YUs/ZzOTPOn/wwQevjEZ0FszPz3+0fZiXTD9akXqJ7gTqCUvqmZG88LHHHnv3gQMH
-        /ika1iG1j+HD27dv/+X2MZ07/dBE6ia6E6gnLKlnBnPx5AvoDh8+/NuLf1hLOLyrYfL6hw4d+lD79Vz7
-        fV8x/e1FxpPoTqCesKSeBDm/uWTxq+Tnjh8//r6bbrrpzzZt2vS/v/CFL5zyC+x27dr1pfXr13928+bN
-        l991110fn/wbgNbPXX311W9rrzcZ7/MmLy4y5kR3AvWEJfWIyHgT3QnUE5bUIyLjTXQnUE9YUo+IjDfR
-        nUA9YUk9IjLeRHcC9YQl9YjIeBPdCdQTlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQS
-        lgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJ
-        AOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBA
-        LmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQS
-        lgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJ
-        AOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBA
-        LmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQS
-        lgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJ
-        AOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBA
-        LmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAGTynXP+H7Du49vpo5ziAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="NPalbumCover.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="NPalbumCover.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="NPalbumCover.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 8</value>
-  </data>
-  <data name="NPalbumCover.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 55</value>
-  </data>
-  <data name="NPalbumCover.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;NPalbumCover.Name" xml:space="preserve">
-    <value>NPalbumCover</value>
-  </data>
-  <data name="&gt;&gt;NPalbumCover.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NPalbumCover.Parent" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="&gt;&gt;NPalbumCover.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="NPtrackName.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="NPtrackName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
-  </data>
-  <data name="NPtrackName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="NPtrackName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>68, 13</value>
-  </data>
-  <data name="NPtrackName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 16</value>
-  </data>
-  <data name="NPtrackName.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="NPtrackName.Text" xml:space="preserve">
-    <value>TrackName</value>
-  </data>
-  <data name="&gt;&gt;NPtrackName.Name" xml:space="preserve">
-    <value>NPtrackName</value>
-  </data>
-  <data name="&gt;&gt;NPtrackName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NPtrackName.Parent" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="&gt;&gt;NPtrackName.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="NPalbumYear.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="NPalbumYear.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
-  </data>
-  <data name="NPalbumYear.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="NPalbumYear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>68, 47</value>
-  </data>
-  <data name="NPalbumYear.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 13</value>
-  </data>
-  <data name="NPalbumYear.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="NPalbumYear.Text" xml:space="preserve">
-    <value>Album - Year</value>
-  </data>
-  <data name="&gt;&gt;NPalbumYear.Name" xml:space="preserve">
-    <value>NPalbumYear</value>
-  </data>
-  <data name="&gt;&gt;NPalbumYear.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NPalbumYear.Parent" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="&gt;&gt;NPalbumYear.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="NPartist.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="NPartist.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
-  </data>
-  <data name="NPartist.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="NPartist.Location" type="System.Drawing.Point, System.Drawing">
-    <value>68, 29</value>
-  </data>
-  <data name="NPartist.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 15</value>
-  </data>
-  <data name="NPartist.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="NPartist.Text" xml:space="preserve">
-    <value>Artist</value>
-  </data>
-  <data name="&gt;&gt;NPartist.Name" xml:space="preserve">
-    <value>NPartist</value>
-  </data>
-  <data name="&gt;&gt;NPartist.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NPartist.Parent" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="&gt;&gt;NPartist.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="Panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="Panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="Panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 65</value>
-  </data>
-  <data name="Panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;Panel2.Name" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="&gt;&gt;Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel2.Parent" xml:space="preserve">
-    <value>Panel10</value>
-  </data>
-  <data name="&gt;&gt;Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="NPqueue.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
@@ -1867,10 +1803,10 @@
     <value>NoControl</value>
   </data>
   <data name="NPqueue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>152, 15</value>
+    <value>100, 55</value>
   </data>
   <data name="NPqueue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
+    <value>25, 25</value>
   </data>
   <data name="NPqueue.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -2136,10 +2072,10 @@
     <value>NoControl</value>
   </data>
   <data name="NPrepeat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>124, 30</value>
+    <value>55, 55</value>
   </data>
   <data name="NPrepeat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
+    <value>25, 25</value>
   </data>
   <data name="NPrepeat.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -2405,10 +2341,10 @@
     <value>NoControl</value>
   </data>
   <data name="NPshuffle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>124, 3</value>
+    <value>10, 55</value>
   </data>
   <data name="NPshuffle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
+    <value>25, 25</value>
   </data>
   <data name="NPshuffle.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -2674,10 +2610,10 @@
     <value>NoControl</value>
   </data>
   <data name="NPNextTrack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 15</value>
+    <value>100, 15</value>
   </data>
   <data name="NPNextTrack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
+    <value>25, 25</value>
   </data>
   <data name="NPNextTrack.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -2943,10 +2879,10 @@
     <value>NoControl</value>
   </data>
   <data name="NPPrevTrack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 15</value>
+    <value>10, 15</value>
   </data>
   <data name="NPPrevTrack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
+    <value>25, 25</value>
   </data>
   <data name="NPPrevTrack.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -3212,10 +3148,10 @@
     <value>NoControl</value>
   </data>
   <data name="NPpausePlay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>40, 6</value>
+    <value>45, 5</value>
   </data>
   <data name="NPpausePlay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 46</value>
+    <value>45, 45</value>
   </data>
   <data name="NPpausePlay.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -3232,14 +3168,11 @@
   <data name="&gt;&gt;NPpausePlay.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="Panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
   <data name="Panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 0</value>
+    <value>32, 130</value>
   </data>
   <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 65</value>
+    <value>135, 90</value>
   </data>
   <data name="Panel1.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -3251,10 +3184,374 @@
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Panel1.Parent" xml:space="preserve">
-    <value>Panel10</value>
+    <value>Panel2</value>
   </data>
   <data name="&gt;&gt;Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="NPalbumCover.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xMzQDW3oAAB0CSURBVHhe7d17
+        jJ5neSbwHEgbDgllOfUApGURaulWqx4o9LC76rZQshwK+1elav8bKFCogB6gZVnabluWbtRmt9XSQlMH
+        sm7i1nFwXIxFIkdBjhIliqLYzmgcy7Fsi1hGJrGMTBIngX2+fMMmmdx2/Mzh9Xff7++Sfop1tfk87/ON
+        noskM55zvvOd7wAAyYUlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQl
+        AJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIA
+        uYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBL
+        WAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQl
+        AJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIA
+        uYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBL
+        WAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQl
+        AJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIA
+        uYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBLWAIAuYQlAJBL
+        WAIAuYQlAJBLWAIAuYQlAJBLWFKPiIw30Z1APWFJPSIy3kR3AvWEJfWIyHgT3QnUE5bUIyLjTXQnUE9Y
+        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
+        v7L44YuUSXQnUE9YUs/ZzOTPOn/wwQevjEZ0FszPz3+0fZiXTD9akXqJ7gTqCUvqmZG88LHHHnv3gQMH
+        /ika1iG1j+HD27dv/+X2MZ07/dBE6ia6E6gnLKlnBnPx5AvoDh8+/NuLf1hLOLyrYfL6hw4d+lD79Vz7
+        fV8x/e1FxpPoTqCesKSeBDm/uWTxq+Tnjh8//r6bbrrpzzZt2vS/v/CFL5zyC+x27dr1pfXr13928+bN
+        l991110fn/wbgNbPXX311W9rrzcZ7/MmLy4y5kR3AvWEJfWIyHgT3QnUE5bUIyLjTXQnUE9YUo+IjDfR
+        nUA9YUk9IjLeRHcC9YQl9YjIeBPdCdQTlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQS
+        lgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJ
+        AOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBA
+        LmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQS
+        lgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJ
+        AOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBA
+        LmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQS
+        lgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJ
+        AOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBA
+        LmEJAOQSlgBALmEJAOQSlgBALmEJAOQSlgBALmEJAGTynXP+H7Du49vpo5ziAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="NPalbumCover.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="NPalbumCover.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="NPalbumCover.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="NPalbumCover.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 150</value>
+  </data>
+  <data name="NPalbumCover.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;NPalbumCover.Name" xml:space="preserve">
+    <value>NPalbumCover</value>
+  </data>
+  <data name="&gt;&gt;NPalbumCover.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NPalbumCover.Parent" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="&gt;&gt;NPalbumCover.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="NPvolumeImg.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="NPvolumeImg.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="NPvolumeImg.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="NPvolumeImg.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 13</value>
+  </data>
+  <data name="NPvolumeImg.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="NPvolumeImg.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;NPvolumeImg.Name" xml:space="preserve">
+    <value>NPvolumeImg</value>
+  </data>
+  <data name="&gt;&gt;NPvolumeImg.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NPvolumeImg.Parent" xml:space="preserve">
+    <value>Panel9</value>
+  </data>
+  <data name="&gt;&gt;NPvolumeImg.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="NPvolume.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="NPvolume.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="NPvolume.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 13</value>
+  </data>
+  <data name="NPvolume.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 45</value>
+  </data>
+  <data name="NPvolume.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;NPvolume.Name" xml:space="preserve">
+    <value>NPvolume</value>
+  </data>
+  <data name="&gt;&gt;NPvolume.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NPvolume.Parent" xml:space="preserve">
+    <value>Panel9</value>
+  </data>
+  <data name="&gt;&gt;NPvolume.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Panel9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 280</value>
+  </data>
+  <data name="Panel9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 50</value>
+  </data>
+  <data name="Panel9.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;Panel9.Name" xml:space="preserve">
+    <value>Panel9</value>
+  </data>
+  <data name="&gt;&gt;Panel9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel9.Parent" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="&gt;&gt;Panel9.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="NPtrackName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="NPtrackName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
+  </data>
+  <data name="NPtrackName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="NPtrackName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 230</value>
+  </data>
+  <data name="NPtrackName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 16</value>
+  </data>
+  <data name="NPtrackName.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="NPtrackName.Text" xml:space="preserve">
+    <value>TrackName</value>
+  </data>
+  <data name="NPtrackName.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;NPtrackName.Name" xml:space="preserve">
+    <value>NPtrackName</value>
+  </data>
+  <data name="&gt;&gt;NPtrackName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NPtrackName.Parent" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="&gt;&gt;NPtrackName.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="NPalbumYear.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="NPalbumYear.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
+  </data>
+  <data name="NPalbumYear.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="NPalbumYear.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 250</value>
+  </data>
+  <data name="NPalbumYear.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 13</value>
+  </data>
+  <data name="NPalbumYear.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="NPalbumYear.Text" xml:space="preserve">
+    <value>Album - Year</value>
+  </data>
+  <data name="NPalbumYear.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;NPalbumYear.Name" xml:space="preserve">
+    <value>NPalbumYear</value>
+  </data>
+  <data name="&gt;&gt;NPalbumYear.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NPalbumYear.Parent" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="&gt;&gt;NPalbumYear.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="NPartist.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="NPartist.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="NPartist.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="NPartist.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 263</value>
+  </data>
+  <data name="NPartist.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 15</value>
+  </data>
+  <data name="NPartist.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="NPartist.Text" xml:space="preserve">
+    <value>Artist</value>
+  </data>
+  <data name="NPartist.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;NPartist.Name" xml:space="preserve">
+    <value>NPartist</value>
+  </data>
+  <data name="&gt;&gt;NPartist.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NPartist.Parent" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="&gt;&gt;NPartist.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="Panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 100</value>
+  </data>
+  <data name="Panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 336</value>
+  </data>
+  <data name="Panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;Panel2.Name" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="&gt;&gt;Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel2.Parent" xml:space="preserve">
+    <value>Panel11</value>
+  </data>
+  <data name="&gt;&gt;Panel2.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="NPprogress.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -3266,7 +3563,7 @@
     <value>0, 20</value>
   </data>
   <data name="NPprogress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>652, 45</value>
+    <value>1134, 45</value>
   </data>
   <data name="NPprogress.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3290,7 +3587,7 @@
     <value>42, 0</value>
   </data>
   <data name="Panel8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>652, 65</value>
+    <value>1134, 65</value>
   </data>
   <data name="Panel8.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -3347,7 +3644,7 @@
     <value>Right</value>
   </data>
   <data name="Panel6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>694, 0</value>
+    <value>1176, 0</value>
   </data>
   <data name="Panel6.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 65</value>
@@ -3431,10 +3728,10 @@
     <value>Fill</value>
   </data>
   <data name="Panel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>393, 0</value>
+    <value>5, 0</value>
   </data>
   <data name="Panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>736, 65</value>
+    <value>1218, 65</value>
   </data>
   <data name="Panel4.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -3451,84 +3748,6 @@
   <data name="&gt;&gt;Panel4.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="PictureBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
-  <data name="PictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="PictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 17</value>
-  </data>
-  <data name="PictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>25, 31</value>
-  </data>
-  <data name="PictureBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;PictureBox1.Name" xml:space="preserve">
-    <value>PictureBox1</value>
-  </data>
-  <data name="&gt;&gt;PictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PictureBox1.Parent" xml:space="preserve">
-    <value>Panel9</value>
-  </data>
-  <data name="&gt;&gt;PictureBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="NPvolume.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="NPvolume.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="NPvolume.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 17</value>
-  </data>
-  <data name="NPvolume.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 45</value>
-  </data>
-  <data name="NPvolume.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;NPvolume.Name" xml:space="preserve">
-    <value>NPvolume</value>
-  </data>
-  <data name="&gt;&gt;NPvolume.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NPvolume.Parent" xml:space="preserve">
-    <value>Panel9</value>
-  </data>
-  <data name="&gt;&gt;NPvolume.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="Panel9.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="Panel9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1129, 0</value>
-  </data>
-  <data name="Panel9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 65</value>
-  </data>
-  <data name="Panel9.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="&gt;&gt;Panel9.Name" xml:space="preserve">
-    <value>Panel9</value>
-  </data>
-  <data name="&gt;&gt;Panel9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel9.Parent" xml:space="preserve">
-    <value>nowPlaying</value>
-  </data>
-  <data name="&gt;&gt;Panel9.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="Panel10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3539,10 +3758,10 @@
     <value>Left</value>
   </data>
   <data name="Panel10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>5, 0</value>
   </data>
   <data name="Panel10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>393, 65</value>
+    <value>0, 65</value>
   </data>
   <data name="Panel10.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -3564,6 +3783,9 @@
   </data>
   <data name="nowPlaying.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 658</value>
+  </data>
+  <data name="nowPlaying.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 0, 5, 0</value>
   </data>
   <data name="nowPlaying.Size" type="System.Drawing.Size, System.Drawing">
     <value>1228, 65</value>
@@ -4032,11 +4254,137 @@
   <data name="&gt;&gt;borderPanel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="Panel11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtSearchMusic.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt</value>
+  </data>
+  <data name="txtSearchMusic.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 65</value>
+  </data>
+  <data name="txtSearchMusic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 24</value>
+  </data>
+  <data name="txtSearchMusic.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;txtSearchMusic.Name" xml:space="preserve">
+    <value>txtSearchMusic</value>
+  </data>
+  <data name="&gt;&gt;txtSearchMusic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSearchMusic.Parent" xml:space="preserve">
+    <value>Panel11</value>
+  </data>
+  <data name="&gt;&gt;txtSearchMusic.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panelViewTiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="panelViewTiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="panelViewTiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 40</value>
+  </data>
+  <data name="panelViewTiles.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;panelViewTiles.Name" xml:space="preserve">
+    <value>panelViewTiles</value>
+  </data>
+  <data name="&gt;&gt;panelViewTiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelViewTiles.Parent" xml:space="preserve">
+    <value>Panel11</value>
+  </data>
+  <data name="&gt;&gt;panelViewTiles.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Panel11.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Panel11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 35</value>
+  </data>
+  <data name="Panel11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 570</value>
+  </data>
+  <data name="Panel11.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Panel11.Name" xml:space="preserve">
+    <value>Panel11</value>
+  </data>
+  <data name="&gt;&gt;Panel11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel11.Parent" xml:space="preserve">
+    <value>Panel12</value>
+  </data>
+  <data name="&gt;&gt;Panel11.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Panel12.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="Panel12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="Panel12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 605</value>
+  </data>
+  <data name="Panel12.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;Panel12.Name" xml:space="preserve">
+    <value>Panel12</value>
+  </data>
+  <data name="&gt;&gt;Panel12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel12.Parent" xml:space="preserve">
+    <value>panelSideDrawer</value>
+  </data>
+  <data name="&gt;&gt;Panel12.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panelSideDrawer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="panelSideDrawer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 29</value>
+  </data>
+  <data name="panelSideDrawer.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>152, 0</value>
+  </data>
+  <data name="panelSideDrawer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>400, 605</value>
+  </data>
+  <data name="panelSideDrawer.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panelSideDrawer.Name" xml:space="preserve">
+    <value>panelSideDrawer</value>
+  </data>
+  <data name="&gt;&gt;panelSideDrawer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelSideDrawer.Parent" xml:space="preserve">
+    <value>Panel17</value>
+  </data>
+  <data name="&gt;&gt;panelSideDrawer.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <metadata name="StatusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <data name="StatusStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+    <value>Fill</value>
   </data>
   <data name="StatusStripLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
@@ -4054,7 +4402,7 @@
     <value>0, 30</value>
   </data>
   <data name="StatusStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1026, 30</value>
+    <value>1228, 30</value>
   </data>
   <data name="StatusStrip.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -4066,22 +4414,46 @@
     <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;StatusStrip.Parent" xml:space="preserve">
-    <value>Panel17</value>
+    <value>Panel3</value>
   </data>
   <data name="&gt;&gt;StatusStrip.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
+  </data>
+  <data name="Panel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="Panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="Panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1228, 29</value>
+  </data>
+  <data name="Panel3.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Panel3.Name" xml:space="preserve">
+    <value>Panel3</value>
+  </data>
+  <data name="&gt;&gt;Panel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel3.Parent" xml:space="preserve">
+    <value>Panel17</value>
+  </data>
+  <data name="&gt;&gt;Panel3.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="Panel17.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="Panel17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 24</value>
+    <value>0, 24</value>
   </data>
   <data name="Panel17.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="Panel17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1026, 634</value>
+    <value>1228, 634</value>
   </data>
   <data name="Panel17.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -4096,7 +4468,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Panel17.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -4118,6 +4490,36 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Pure</value>
+  </data>
+  <data name="&gt;&gt;PlayToolStripMenuItem.Name" xml:space="preserve">
+    <value>PlayToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;PlayToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AlbumInfoToolStripMenuItem.Name" xml:space="preserve">
+    <value>AlbumInfoToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;AlbumInfoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AddToQueueToolStripMenuItem.Name" xml:space="preserve">
+    <value>AddToQueueToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;AddToQueueToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AddToPlaylistToolStripMenuItem.Name" xml:space="preserve">
+    <value>AddToPlaylistToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;AddToPlaylistToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AlbumtxtNewPlaylist.Name" xml:space="preserve">
+    <value>AlbumtxtNewPlaylist</value>
+  </data>
+  <data name="&gt;&gt;AlbumtxtNewPlaylist.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;StatusStripLabel.Name" xml:space="preserve">
     <value>StatusStripLabel</value>

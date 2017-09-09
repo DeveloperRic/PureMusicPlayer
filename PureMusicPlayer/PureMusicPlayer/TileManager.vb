@@ -13,21 +13,26 @@
         Next
     End Sub
     Public Enum TileType
-        HOME
-        IMPORT_TRACKS
-        QUEUE
+        PLAYER_PAGE
+        OPEN_WINDOW
         PLAYLIST
         ALBUM
         BLANK
         DUMMY
+        RUN_CODE
     End Enum
     Public Sub addTile(ByRef type As TileType, ByVal label As String, ParamArray args() As Object)
         Dim tile As New Tile(Me, type, label, args)
         tiles.Add(tile)
         panel.Controls.Add(tile)
     End Sub
+    Public Sub addTileWAction(ByRef type As TileType, ByVal label As String, ParamArray args() As Action)
+        Dim tile As New Tile(Me, type, label, args)
+        tiles.Add(tile)
+        panel.Controls.Add(tile)
+    End Sub
     Private Sub handleResize()
-        For Each ctrl In panel.Controls
+        For Each ctrl As Control In panel.Controls
             ctrl.Width = panel.ClientSize.Width - 20
         Next
     End Sub

@@ -3,6 +3,24 @@
 Public Class TrackInfo
     Public track As Track
     Public returnTrackItem As TrackListItem
+
+    Private _albumModeEnabled As Boolean
+    Public actionOnAlbumEdit As Action
+    Private orgAlbumName As String
+    Public Property AlbumModeEnabled() As Boolean
+        Get
+            Return _albumModeEnabled
+        End Get
+        Set(ByVal value As Boolean)
+            _albumModeEnabled = value
+            If value Then
+                Panel1.Hide()
+                Panel2.Hide()
+                orgAlbumName = track.Album.Name
+            End If
+        End Set
+    End Property
+
     Private Sub CreateTrack_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         colourWindows()
         MainPlayer.noFocus = True
@@ -11,21 +29,21 @@ Public Class TrackInfo
     Dim pathAnim As TextSlider
     Public Sub refreshControls()
         If pathAnim IsNot Nothing Then
-            pathAnim.toggleProcessor(False)
+            pathAnim.enabled = False
             pathAnim = Nothing
         End If
         If track.SongPath.Length > 70 Then
             pathAnim = New TextSlider(lblPath, track.SongPath, 1, 70)
-            pathAnim.toggleProcessor(True)
+            pathAnim.run()
         Else
             lblPath.Text = track.SongPath
         End If
         lblTitle.Text = track.TrackName
         lblArtist.Text = track.Artist
-        lblAlbum.Text = track.Album
-        lblYear.Text = track.Year
-        If track.AlbumCover IsNot Nothing Then
-            BackgroundImage = track.AlbumCover
+        lblAlbum.Text = track.Album.Name
+        lblYear.Text = track.Album.year
+        If track.Album.Cover IsNot Nothing Then
+            BackgroundImage = track.Album.Cover
         End If
     End Sub
 
@@ -46,17 +64,37 @@ Public Class TrackInfo
     End Sub
 
     Private Sub btnChangeAlbum_Click(sender As Object, e As EventArgs) Handles btnChangeAlbum.Click
-        Dim album As String = InputBox("Please enter the real track album", "Track Info", track.Album)
-        If Not album = "" Then
-            track.Album = album
+        Dim albumString As String = InputBox("Please enter the real track album", "Track Info", track.Album.Name)
+        If Not albumString = "" Then
+            If AlbumModeEnabled Then
+                Dim album As Album = Album.findAlbumWithoutEdit(orgAlbumName)
+                If album IsNot Nothing Then
+                    album.Name = albumString
+                    actionOnAlbumEdit.Invoke
+                Else
+                    sendNotification("Internal error: Album mode incorrectly enabled", 2)
+                End If
+            Else
+                Album.moveTrack(track, albumString)
+            End If
+            refreshControls()
         End If
-        refreshControls()
     End Sub
 
     Private Sub btnChangeYear_Click(sender As Object, e As EventArgs) Handles btnChangeYear.Click
         Try
-            Dim year As Integer = Val(InputBox("Please enter the real track year", "Track Info", track.Year))
-            track.Year = year.ToString
+            Dim year As Integer = Val(InputBox("Please enter the real track year", "Track Info", track.Album.year))
+            If AlbumModeEnabled Then
+                Dim album As Album = Album.findAlbumWithoutEdit(orgAlbumName)
+                If album IsNot Nothing Then
+                    album.year = year
+                    actionOnAlbumEdit.Invoke
+                Else
+                    sendNotification("Internal error: Album mode incorrectly enabled", 2)
+                End If
+            Else
+                track.Album.year = year.ToString
+            End If
             refreshControls()
         Catch ex As Exception
             MsgBox("Invalid year!",, "Track Info")
@@ -68,8 +106,8 @@ Public Class TrackInfo
             With returnTrackItem
                 .TrackName = track.TrackName
                 .Artist = track.Artist
-                .Album = track.Album
-                .Year = track.Year
+                .Album = track.Album.Name
+                .Year = track.Album.year
             End With
         End If
         Track.saveSingleTrack(track)
@@ -141,13 +179,16 @@ Public Class TrackInfo
     Private Sub TrackInfo_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         MainPlayer.noFocus = False
         MainPlayer.returnFocus = Nothing
+        AlbumModeEnabled = False
+        Panel1.Show()
+        Panel2.Show()
     End Sub
 
     Private Sub btnSearchCover_Click(sender As Object, e As EventArgs) Handles btnSearchCover.Click
-        Dim info As TrackInfoJSON = GetAlbumCover(track)
+        Dim info As TrackInfoJSON = GetAlbumCover(track, track.Album)
         If info.cover IsNot Nothing Then
-            track.AlbumCover = info.cover
-            BackgroundImage = track.AlbumCover
+            track.Album.Cover = info.cover
+            BackgroundImage = track.Album.Cover
         Else
             MsgBox("Query returned no new album covers!")
         End If
@@ -171,10 +212,10 @@ Public Class TrackInfo
                 track.Artist = s
             End If
             If Not .album = "" Then
-                track.Album = .album
+                track.Album.Name = .album
             End If
             If Not .year = "" Then
-                track.Year = .year
+                track.Album.year = .year
             End If
         End With
     End Sub
@@ -187,8 +228,8 @@ Public Class TrackInfo
         If OpenFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
             If My.Computer.FileSystem.FileExists(OpenFileDialog1.FileName) Then
                 Using img As Image = Image.FromFile(OpenFileDialog1.FileName)
-                    track.AlbumCover.Dispose()
-                    track.AlbumCover = img
+                    track.Album.Cover.Dispose()
+                    track.Album.Cover = img
                     'BackgroundImage = img
                     img.Dispose()
                 End Using

@@ -15,14 +15,14 @@
         Me.playlist = playlist
         If playlist.tracks.Count > 0 Then
             If playlist.tracks.Count < 4 Then
-                Cover1.Image = playlist.tracks(0).AlbumCover
+                Cover1.Image = playlist.tracks(0).Album.Cover
                 TableLayout.SetRowSpan(Cover1, 2)
                 TableLayout.SetColumnSpan(Cover1, 2)
             Else
-                Cover1.Image = playlist.tracks(0).AlbumCover
-                Cover2.Image = playlist.tracks(1).AlbumCover
-                Cover3.Image = playlist.tracks(2).AlbumCover
-                Cover4.Image = playlist.tracks(3).AlbumCover
+                Cover1.Image = playlist.tracks(0).Album.Cover
+                Cover2.Image = playlist.tracks(1).Album.Cover
+                Cover3.Image = playlist.tracks(2).Album.Cover
+                Cover4.Image = playlist.tracks(3).Album.Cover
             End If
         End If
     End Sub

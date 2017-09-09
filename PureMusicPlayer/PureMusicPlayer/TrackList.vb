@@ -7,7 +7,7 @@
     Public Class TrackListData
         Public type As TrackListType
         Public args As Object()
-        Public Sub New(ByVal type As TrackListType, Optional ByVal args As Object() = Nothing)
+        Public Sub New(ByVal type As TrackListType, ParamArray args As Object())
             With Me
                 .type = type
                 If args IsNot Nothing Then
@@ -30,10 +30,24 @@
             Return _tracks
         End Get
         Set(value As List(Of Track))
-            _tracks = value
+            Dim newList As New List(Of Track)
+            For Each track As Track In value
+                If Not alreadyContainsTrack(newList, track) Then
+                    newList.Add(track)
+                End If
+            Next
+            _tracks = newList
             refresh()
         End Set
     End Property
+    Private Function alreadyContainsTrack(ByVal list As List(Of Track), ByVal track As Track) As Boolean
+        For Each t As Track In list
+            If t.Dir = track.Dir Then
+                Return True
+            End If
+        Next
+        Return False
+    End Function
     Public Sub New(ByVal tracks As List(Of Track), ByRef base As Control, ByVal panelLocation As Point, ByVal panelSize As Size, ByVal data As TrackListData)
         Me.base = base
         base.Controls.Clear()
@@ -62,8 +76,8 @@
             With control
                 .TrackName = track.TrackName
                 .Artist = track.Artist
-                .Album = track.Album
-                .Year = track.Year
+                .Album = track.Album.Name
+                .Year = track.Album.year
                 .Duration = track.Length
                 .TextColour = ColorTranslator.FromHtml("#ffebee")
                 .AltColour = ColorTranslator.FromHtml("#8C8C8C")
@@ -88,8 +102,8 @@
         With control
             .TrackName = track.TrackName
             .Artist = track.Artist
-            .Album = track.Album
-            .Year = track.Year
+            .Album = track.Album.Name
+            .Year = track.Album.year
             .Duration = track.Length
             .TextColour = ColorTranslator.FromHtml("#ffebee")
             .AltColour = ColorTranslator.FromHtml("#CCCCCC")

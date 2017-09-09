@@ -9,16 +9,22 @@
         Me.playlist = playlist
         If playlist.tracks.Count > 0 Then
             If playlist.tracks.Count < 4 Then
-                Cover1.Image = playlist.tracks(0).AlbumCover
+                If playlist.tracks(0).Album.Cover IsNot Nothing Then
+                    Cover1.Image = playlist.tracks(0).Album.Cover
+                Else
+                    Cover1.Image = My.Resources.album_cover_default
+                    BackColor = ColorTranslator.FromHtml("#212121")
+                End If
                 TableLayout.SetRowSpan(Cover1, 2)
                 TableLayout.SetColumnSpan(Cover1, 2)
             Else
-                Cover1.Image = playlist.tracks(0).AlbumCover
-                Cover2.Image = playlist.tracks(1).AlbumCover
-                Cover3.Image = playlist.tracks(2).AlbumCover
-                Cover4.Image = playlist.tracks(3).AlbumCover
+                Cover1.Image = playlist.tracks(0).Album.Cover
+                Cover2.Image = playlist.tracks(1).Album.Cover
+                Cover3.Image = playlist.tracks(2).Album.Cover
+                Cover4.Image = playlist.tracks(3).Album.Cover
             End If
         End If
+        lblCardType.ForeColor = ColorTranslator.FromHtml("#ffebee")
         PlaylistName.ForeColor = ColorTranslator.FromHtml("#ffebee")
         PlaylistName.Text = playlist.name
     End Sub
@@ -33,7 +39,10 @@
             End If
         End If
         PurePlayer.queue.stop()
-        PurePlayer.queue = New Queue(New Queue.QueueData(Queue.QueueType.PLAYLIST, New Object() {playlist}), playlist.tracks)
+        PurePlayer.queue = New Queue(New Queue.QueueData(Queue.QueueType.PLAYLIST, playlist), playlist.tracks)
+        If PurePlayer.queue.Shuffled Then
+            PurePlayer.queue.shuffle()
+        End If
         PurePlayer.queue.play(, 0)
         playPause.Image = My.Resources.pause_button_hover
     End Sub

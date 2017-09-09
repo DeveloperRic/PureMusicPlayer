@@ -7,15 +7,15 @@ Public Class Track
         If Not inuse Then
             Exit Sub
         End If
-        Dim dirs As DirectoryInfo() = My.Computer.FileSystem.GetDirectoryInfo(filePath & "\tracks").GetDirectories.ToArray
+        Dim dirs As DirectoryInfo() = My.Computer.FileSystem.GetDirectoryInfo(filePath & "tracks").GetDirectories.ToArray
         For Each dir As DirectoryInfo In dirs
             For Each file As FileInfo In dir.GetFiles
                 file.Delete()
             Next
             dir.Delete()
         Next
-        My.Computer.FileSystem.GetDirectoryInfo(filePath & "\tracks").Delete()
-        My.Computer.FileSystem.CreateDirectory(filePath & "\tracks")
+        My.Computer.FileSystem.GetDirectoryInfo(filePath & "tracks").Delete()
+        My.Computer.FileSystem.CreateDirectory(filePath & "tracks")
     End Sub
     Public Shared Sub loadTracks()
         If trackQueue IsNot Nothing Then
@@ -26,7 +26,7 @@ Public Class Track
         End If
         tracks.Clear()
         'purgeTracks()
-        For Each dir As DirectoryInfo In My.Computer.FileSystem.GetDirectoryInfo(filePath & "\tracks").GetDirectories.ToArray
+        For Each dir As DirectoryInfo In My.Computer.FileSystem.GetDirectoryInfo(filePath & "tracks").GetDirectories.ToArray
             instTrack(dir.FullName)
         Next
         trackQueue = New Queue(New Queue.QueueData(Queue.QueueType.DUMMY))
@@ -38,7 +38,7 @@ Public Class Track
             Dim dir As String = t.Dir
             dirnames.Add(dir.Substring(0, dir.Length - 1))
         Next
-        Dim dirs As DirectoryInfo() = My.Computer.FileSystem.GetDirectoryInfo(filePath & "\tracks").GetDirectories.ToArray
+        Dim dirs As DirectoryInfo() = My.Computer.FileSystem.GetDirectoryInfo(filePath & "tracks").GetDirectories.ToArray
         For Each dir As DirectoryInfo In dirs
             If Not dirnames.Contains(dir.FullName) Then
                 For Each file As FileInfo In dir.GetFiles
@@ -62,14 +62,11 @@ Public Class Track
             writer.WriteLine("songPath:" & t.SongPath.Replace(":", "?"))
             writer.WriteLine("trackName:" & t.TrackName)
             writer.WriteLine("artist:" & t.Artist)
-            writer.WriteLine("album:" & t.Album)
+            writer.WriteLine("album:" & t.Album.name)
             writer.WriteLine("type:" & t.Type)
-            writer.WriteLine("year:" & t.Year)
             writer.WriteLine("length:" & t.Length)
+            writer.WriteLine("playCount:" & t.PlayCount)
             writer.Close()
-            If t.AlbumCover IsNot Nothing Then
-                t.AlbumCover.Save(t.Dir & "cover.png")
-            End If
         Catch ex As Exception
         End Try
     End Sub
@@ -93,19 +90,18 @@ Public Class Track
                 'Get the title of this song.
                 Dim TitleBytes(30) As Byte
                 fs.Read(TitleBytes, 0, 30)
-                Dim Title As String = System.Text.Encoding.Default.GetString(TitleBytes)
+                Dim Title As String = Text.Encoding.Default.GetString(TitleBytes)
                 'Get the Artist of this song.
                 Dim ArtistBytes(30) As Byte
                 fs.Read(ArtistBytes, 0, 30)
-                Dim Artist As String = System.Text.Encoding.Default.GetString(ArtistBytes)
+                Dim Artist As String = Text.Encoding.Default.GetString(ArtistBytes)
                 'Construct Mp3Song object.
                 With song
                     ._orgPath = path
                     .TrackName = Title
                     .Artist = Artist
-                    .Album = album
+                    .Album = PureMusicPlayer.Album.findAlbum(album, song)
                     .Type = Right(path, 3)
-                    .Year = DateTime.Now.Year
                 End With
             Else
                 Dim name As String = dirs(UBound(dirs)).Replace(path.Substring(path.LastIndexOf(".")), "")
@@ -122,14 +118,13 @@ Public Class Track
                     If Not artist = "" Then
                         .Artist = artist
                     End If
-                    .Album = album
+                    .Album = PureMusicPlayer.Album.findAlbum(album, song)
                     .Type = Right(path, 3)
-                    .Year = DateTime.Now.Year
                 End With
             End If
             fs.Close()
             With song
-                ._dir = tracksPath & My.Computer.FileSystem.GetDirectoryInfo(filePath & "\tracks").GetDirectories.Count & "\"
+                ._dir = tracksPath & My.Computer.FileSystem.GetDirectoryInfo(filePath & "tracks").GetDirectories.Count & "\"
             End With
             tryDownloadInfo(song)
             tracks.Add(song)
@@ -146,25 +141,16 @@ Public Class Track
                 My.Computer.FileSystem.CreateDirectory(dir)
             End If
             Dim settings As Dictionary(Of String, String) = loadSettings(dir)
-            Dim download As Boolean
             With song
                 ._dir = dir & "\"
                 ._songPath = settings("songPath").Replace("?", ":")
                 .TrackName = settings("trackName")
                 .Artist = settings("artist")
-                .Album = settings("album")
+                .Album = Album.findAlbum(settings("album"), song)
                 .Type = settings("type")
-                .Year = settings("year")
                 ._length = CInt(settings("length"))
-                If My.Computer.FileSystem.FileExists(dir & "\cover.png") Then
-                    .AlbumCover = Image.FromFile(dir & "\cover.png")
-                Else
-                    download = True
-                End If
+                .PlayCount = CInt(settings("playCount"))
             End With
-            If download Then
-                tryDownloadInfo(song)
-            End If
             tracks.Add(song)
             Return song
         Catch ex As Exception
@@ -177,9 +163,9 @@ Public Class Track
             song.TrackName = result.name
         End If
         If Not result.album = "" Then
-            song.Album = result.album
+            song.Album.name = result.album
         End If
-        If Not result.artists.Count = 0 Then
+        If result.artists.Count > 0 Then
             Dim s As String = ""
             For Each a As String In result.artists
                 If s = "" Then
@@ -191,12 +177,9 @@ Public Class Track
             song.Artist = s
         End If
         If Not result.year = "" Then
-            song.Year = result.year
+            song.Album.year = result.year
         End If
-        GetAlbumCover(song, result)
-        If Not result.cover Is Nothing Then
-            song.AlbumCover = result.cover
-        End If
+        GetAlbumCover(song, song.Album, result)
     End Sub
     Public Sub New()
         timer.Enabled = False
@@ -213,7 +196,7 @@ Public Class Track
     End Function
     Public Shared Function createTrack(ByVal path As String) As Track
         Dim track As Track = firstInstTrack(path)
-        track._dir = tracksPath & My.Computer.FileSystem.GetDirectoryInfo(filePath & "\tracks").GetDirectories.Count & "\"
+        track._dir = tracksPath & My.Computer.FileSystem.GetDirectoryInfo(filePath & "tracks").GetDirectories.Count & "\"
         My.Computer.FileSystem.CreateDirectory(track.Dir)
         track._songPath = track.Dir & "track." & track.Type
         My.Computer.FileSystem.CopyFile(path, track.SongPath, True)
@@ -238,7 +221,7 @@ Public Class Track
             duration = min & ":" & sec
         Catch ex As Exception
         End Try
-        Return New String() {_trackName, _artist, _album, _year, duration}
+        Return New String() {_trackName, _artist, _album.name, _year, duration}
     End Function
     Private Shared Function loadSettings(ByVal dir As String) As Dictionary(Of String, String)
         Dim s As New Dictionary(Of String, String)
@@ -253,6 +236,7 @@ Public Class Track
         reader.Close()
         Return s
     End Function
+
     Private Sub trackTick(ByVal sender As System.Object, ByVal e As System.EventArgs)
         _time += 1000
         If Not _time > _length * 1000 Then
@@ -261,20 +245,11 @@ Public Class Track
             MainPlayer.Queue.addTrack(Nothing, 1)
         End If
     End Sub
-    Private _artist As String
-    Private _trackName As String
-    Private _orgPath As String
-    Private _songPath As String
-    Private _dir As String
-    Private _album As String
-    Private _albumCover As Image
-    Private _type As String
+
     Private _year As Integer
-    Private _time As Integer
-    Private _volume As Integer
     Private timer As New Timer
-    Private _length As Decimal
-    'Artist
+
+    Private _artist As String
     Public Property Artist() As String
         Get
             Return _artist
@@ -283,7 +258,8 @@ Public Class Track
             Me._artist = value
         End Set
     End Property
-    'Song title
+
+    Private _trackName As String
     Public Property TrackName() As String
         Get
             Return _trackName
@@ -292,39 +268,39 @@ Public Class Track
             Me._trackName = value
         End Set
     End Property
-    'song path
+
+    Private _orgPath As String
     Public ReadOnly Property OrgPath() As String
         Get
             Return _orgPath
         End Get
     End Property
+
+    Private _songPath As String
     Public ReadOnly Property SongPath() As String
         Get
             Return _songPath
         End Get
     End Property
+
+    Private _dir As String
     Public ReadOnly Property Dir() As String
         Get
             Return _dir
         End Get
     End Property
-    Public Property Album() As String
+
+    Private _album As Album
+    Public Property Album() As Album
         Get
             Return _album
         End Get
-        Set(ByVal value As String)
+        Set(ByVal value As Album)
             Me._album = value
         End Set
     End Property
-    Public Property AlbumCover As Image
-        Get
-            Return _albumCover
-        End Get
-        Set(value As Image)
-            _albumCover = value
-        End Set
-    End Property
-    'Type
+
+    Private _type As String
     Public Property Type() As String
         Get
             Return _type
@@ -333,19 +309,24 @@ Public Class Track
             Me._type = value
         End Set
     End Property
-    Public Property Year() As String
-        Get
-            Return _year
-        End Get
-        Set(ByVal value As String)
-            Me._year = value
-        End Set
-    End Property
+
+    Private _length As Decimal
     Public ReadOnly Property Length()
         Get
             Return _length
         End Get
     End Property
+
+    Private _playCount As Integer
+    Public Property PlayCount() As Integer
+        Get
+            Return _playCount
+        End Get
+        Set(ByVal value As Integer)
+            _playCount = value
+        End Set
+    End Property
+
     'display [Artist] - [Song]
     Public ReadOnly Property ArtistAndName()
         Get
@@ -356,6 +337,8 @@ Public Class Track
             Return _artist & "-" & _trackName
         End Get
     End Property
+
+    Private _time As Integer
     Property Time() As Integer
         Get
             Return _time / 1000
@@ -364,6 +347,8 @@ Public Class Track
             _time = v * 1000
         End Set
     End Property
+
+    Private _volume As Integer
     Property Volume() As Integer
         Get
             Return _volume / 1000
@@ -373,9 +358,10 @@ Public Class Track
             mciSendString("setaudio " & _orgPath & " volume to " & _volume, Nothing, 0, IntPtr.Zero)
         End Set
     End Property
+
     Private Declare Function mciSendString Lib "winmm.dll" Alias "mciSendStringA" (ByVal lpstrCommand As String, ByVal lpstrReturnString As String, ByVal uReturnLength As Int32, ByVal hwndCallback As Int32) As Int32
 
-    Public Sub Play()
+    Public Sub Play(Optional ByVal countPlay As Boolean = False)
         If _songPath = "" Or SongPath.Length <= 4 Then Exit Sub
 
         Select Case Right(SongPath, 3).ToLower
@@ -402,6 +388,9 @@ Public Class Track
         timer.Enabled = True
         Volume = 100
         IsPaused = False
+        If countPlay Then
+            PlayCount += 1
+        End If
         If MainPlayer.Queue IsNot Nothing Then
             MainPlayer.notifyPlay()
         End If

@@ -51,6 +51,10 @@
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SpotifyAPI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpotifyAPI-NET.2.14.2\lib\SpotifyAPI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -76,7 +80,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Album.vb" />
     <Compile Include="Animations.vb" />
+    <Compile Include="EasyJSON.vb" />
     <Compile Include="ImportTracks.Designer.vb">
       <DependentUpon>ImportTracks.vb</DependentUpon>
     </Compile>
@@ -97,7 +103,14 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="PurePlayer.vb" />
+    <Compile Include="PurePlayerSettings.vb" />
     <Compile Include="Queue.vb" />
+    <Compile Include="SuggestionCard.Designer.vb">
+      <DependentUpon>SuggestionCard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SuggestionCard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Tile.Designer.vb">
       <DependentUpon>Tile.vb</DependentUpon>
     </Compile>
@@ -148,6 +161,12 @@
     <Compile Include="TrackListView.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="WelcomeScreen.Designer.vb">
+      <DependentUpon>WelcomeScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WelcomeScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ImportTracks.resx">
@@ -158,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PlaylistCover.resx">
       <DependentUpon>PlaylistCover.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuggestionCard.resx">
+      <DependentUpon>SuggestionCard.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tile.resx">
       <DependentUpon>Tile.vb</DependentUpon>
@@ -182,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TrackListView.resx">
       <DependentUpon>TrackListView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WelcomeScreen.resx">
+      <DependentUpon>WelcomeScreen.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -295,6 +320,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\next_page_icon_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spotify-bright.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\soundcloud-linear.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

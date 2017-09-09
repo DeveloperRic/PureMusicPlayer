@@ -56,7 +56,7 @@ Partial Class Tile
         Me.Controls.Add(Me._text)
         Me.Controls.Add(Me._separator)
         Me.Name = "Tile"
-        Me.Size = New System.Drawing.Size(59, 40)
+        Me.Size = New System.Drawing.Size(60, 40)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -68,4 +68,13 @@ Public Class Playlist
         tracks.Remove(track)
         MainPlayer.moveInPageStack(0)
     End Sub
+    Private _playCount As Integer
+    Public Property PlayCount() As Integer
+        Get
+            Return _playCount
+        End Get
+        Set(ByVal value As Integer)
+            _playCount = value
+        End Set
+    End Property
 End Class

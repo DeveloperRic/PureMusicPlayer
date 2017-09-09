@@ -22,14 +22,20 @@ Partial Class MainPlayer
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainPlayer))
         Me.MainPlayerPages = New System.Windows.Forms.TabControl()
         Me.loadPage = New System.Windows.Forms.TabPage()
+        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.homePage = New System.Windows.Forms.TabPage()
+        Me.HsuggestionsCardReel = New System.Windows.Forms.FlowLayoutPanel()
         Me.HplaylistCardReel = New System.Windows.Forms.FlowLayoutPanel()
-        Me.HtracksCollection = New System.Windows.Forms.Panel()
         Me.lblGreeting2 = New System.Windows.Forms.Label()
         Me.lblGreeting = New System.Windows.Forms.Label()
+        Me.trackPage = New System.Windows.Forms.TabPage()
+        Me.lblYourMusicSub = New System.Windows.Forms.Label()
+        Me.lblYourMusic = New System.Windows.Forms.Label()
+        Me.HtracksCollection = New System.Windows.Forms.Panel()
         Me.queuePage = New System.Windows.Forms.TabPage()
         Me.QplayingFrom = New System.Windows.Forms.Label()
         Me.QtracksCollection = New System.Windows.Forms.Panel()
@@ -37,9 +43,16 @@ Partial Class MainPlayer
         Me.albumPage = New System.Windows.Forms.TabPage()
         Me.AlbumTracksCollection = New System.Windows.Forms.Panel()
         Me.AlbumHeader = New System.Windows.Forms.Panel()
-        Me.AlbumPlay = New System.Windows.Forms.Button()
+        Me.AlbumbtnOptions = New System.Windows.Forms.Button()
+        Me.AlbumbtnPlay = New System.Windows.Forms.Button()
         Me.AlbumLabel = New System.Windows.Forms.Label()
         Me.AlbumCover = New System.Windows.Forms.PictureBox()
+        Me.AlbumMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.PlayToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AlbumInfoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AddToQueueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AddToPlaylistToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AlbumtxtNewPlaylist = New System.Windows.Forms.ToolStripTextBox()
         Me.AlbumTracks = New System.Windows.Forms.Label()
         Me.AlbumName = New System.Windows.Forms.Label()
         Me.AlbumArtists = New System.Windows.Forms.Label()
@@ -52,18 +65,14 @@ Partial Class MainPlayer
         Me.PlaylistCreated = New System.Windows.Forms.Label()
         Me.PlaylistName = New System.Windows.Forms.Label()
         Me.PlaylistArtists = New System.Windows.Forms.Label()
+        Me.settingsPage = New System.Windows.Forms.TabPage()
+        Me.settingsFlowPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.HtilesList = New System.Windows.Forms.FlowLayoutPanel()
         Me.tilesBar = New System.Windows.Forms.Panel()
-        Me.Panel14 = New System.Windows.Forms.Panel()
-        Me.Panel16 = New System.Windows.Forms.Panel()
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.tileNextPage = New System.Windows.Forms.PictureBox()
         Me.tilePrevPage = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.NPalbumCover = New System.Windows.Forms.PictureBox()
-        Me.NPtrackName = New System.Windows.Forms.Label()
-        Me.NPalbumYear = New System.Windows.Forms.Label()
-        Me.NPartist = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.NPqueue = New System.Windows.Forms.PictureBox()
         Me.NPrepeat = New System.Windows.Forms.PictureBox()
@@ -71,6 +80,13 @@ Partial Class MainPlayer
         Me.NPNextTrack = New System.Windows.Forms.PictureBox()
         Me.NPPrevTrack = New System.Windows.Forms.PictureBox()
         Me.NPpausePlay = New System.Windows.Forms.PictureBox()
+        Me.NPalbumCover = New System.Windows.Forms.PictureBox()
+        Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.NPvolumeImg = New System.Windows.Forms.PictureBox()
+        Me.NPvolume = New System.Windows.Forms.TrackBar()
+        Me.NPtrackName = New System.Windows.Forms.Label()
+        Me.NPalbumYear = New System.Windows.Forms.Label()
+        Me.NPartist = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.NPprogress = New System.Windows.Forms.TrackBar()
@@ -78,9 +94,6 @@ Partial Class MainPlayer
         Me.NPmaxTime = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.NPcurTime = New System.Windows.Forms.Label()
-        Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.NPvolume = New System.Windows.Forms.TrackBar()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.nowPlaying = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
@@ -90,23 +103,31 @@ Partial Class MainPlayer
         Me.PURE_LOGO = New System.Windows.Forms.Label()
         Me.borderPanel = New System.Windows.Forms.Panel()
         Me.Panel17 = New System.Windows.Forms.Panel()
+        Me.panelSideDrawer = New System.Windows.Forms.Panel()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.txtSearchMusic = New System.Windows.Forms.TextBox()
+        Me.panelViewTiles = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.StatusStripLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.MainPlayerPages.SuspendLayout()
+        Me.loadPage.SuspendLayout()
         Me.homePage.SuspendLayout()
+        Me.trackPage.SuspendLayout()
         Me.queuePage.SuspendLayout()
         Me.albumPage.SuspendLayout()
         Me.AlbumHeader.SuspendLayout()
         CType(Me.AlbumCover, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.AlbumMenuStrip.SuspendLayout()
         Me.playlistPage.SuspendLayout()
         Me.PlaylistHeader.SuspendLayout()
+        Me.settingsPage.SuspendLayout()
         Me.tilesBar.SuspendLayout()
-        Me.Panel14.SuspendLayout()
         Me.Panel15.SuspendLayout()
         CType(Me.tileNextPage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tilePrevPage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
-        CType(Me.NPalbumCover, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.NPqueue, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NPrepeat, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -114,15 +135,15 @@ Partial Class MainPlayer
         CType(Me.NPNextTrack, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NPPrevTrack, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NPpausePlay, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NPalbumCover, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel9.SuspendLayout()
+        CType(Me.NPvolumeImg, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NPvolume, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         Me.Panel8.SuspendLayout()
         CType(Me.NPprogress, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel6.SuspendLayout()
         Me.Panel5.SuspendLayout()
-        Me.Panel9.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NPvolume, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel10.SuspendLayout()
         Me.nowPlaying.SuspendLayout()
         Me.Panel7.SuspendLayout()
         CType(Me.closeBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -130,6 +151,10 @@ Partial Class MainPlayer
         CType(Me.maximiseBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.borderPanel.SuspendLayout()
         Me.Panel17.SuspendLayout()
+        Me.panelSideDrawer.SuspendLayout()
+        Me.Panel12.SuspendLayout()
+        Me.Panel11.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -137,9 +162,11 @@ Partial Class MainPlayer
         '
         Me.MainPlayerPages.Controls.Add(Me.loadPage)
         Me.MainPlayerPages.Controls.Add(Me.homePage)
+        Me.MainPlayerPages.Controls.Add(Me.trackPage)
         Me.MainPlayerPages.Controls.Add(Me.queuePage)
         Me.MainPlayerPages.Controls.Add(Me.albumPage)
         Me.MainPlayerPages.Controls.Add(Me.playlistPage)
+        Me.MainPlayerPages.Controls.Add(Me.settingsPage)
         resources.ApplyResources(Me.MainPlayerPages, "MainPlayerPages")
         Me.MainPlayerPages.Name = "MainPlayerPages"
         Me.MainPlayerPages.SelectedIndex = 0
@@ -148,29 +175,37 @@ Partial Class MainPlayer
         '
         'loadPage
         '
+        Me.loadPage.Controls.Add(Me.ProgressBar1)
         resources.ApplyResources(Me.loadPage, "loadPage")
         Me.loadPage.Name = "loadPage"
         Me.loadPage.UseVisualStyleBackColor = True
         '
+        'ProgressBar1
+        '
+        Me.ProgressBar1.ForeColor = System.Drawing.Color.BlueViolet
+        resources.ApplyResources(Me.ProgressBar1, "ProgressBar1")
+        Me.ProgressBar1.Name = "ProgressBar1"
+        Me.ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee
+        '
         'homePage
         '
+        Me.homePage.Controls.Add(Me.HsuggestionsCardReel)
         Me.homePage.Controls.Add(Me.HplaylistCardReel)
-        Me.homePage.Controls.Add(Me.HtracksCollection)
         Me.homePage.Controls.Add(Me.lblGreeting2)
         Me.homePage.Controls.Add(Me.lblGreeting)
         resources.ApplyResources(Me.homePage, "homePage")
         Me.homePage.Name = "homePage"
         Me.homePage.UseVisualStyleBackColor = True
         '
+        'HsuggestionsCardReel
+        '
+        resources.ApplyResources(Me.HsuggestionsCardReel, "HsuggestionsCardReel")
+        Me.HsuggestionsCardReel.Name = "HsuggestionsCardReel"
+        '
         'HplaylistCardReel
         '
         resources.ApplyResources(Me.HplaylistCardReel, "HplaylistCardReel")
         Me.HplaylistCardReel.Name = "HplaylistCardReel"
-        '
-        'HtracksCollection
-        '
-        resources.ApplyResources(Me.HtracksCollection, "HtracksCollection")
-        Me.HtracksCollection.Name = "HtracksCollection"
         '
         'lblGreeting2
         '
@@ -181,6 +216,30 @@ Partial Class MainPlayer
         '
         resources.ApplyResources(Me.lblGreeting, "lblGreeting")
         Me.lblGreeting.Name = "lblGreeting"
+        '
+        'trackPage
+        '
+        Me.trackPage.Controls.Add(Me.lblYourMusicSub)
+        Me.trackPage.Controls.Add(Me.lblYourMusic)
+        Me.trackPage.Controls.Add(Me.HtracksCollection)
+        resources.ApplyResources(Me.trackPage, "trackPage")
+        Me.trackPage.Name = "trackPage"
+        Me.trackPage.UseVisualStyleBackColor = True
+        '
+        'lblYourMusicSub
+        '
+        resources.ApplyResources(Me.lblYourMusicSub, "lblYourMusicSub")
+        Me.lblYourMusicSub.Name = "lblYourMusicSub"
+        '
+        'lblYourMusic
+        '
+        resources.ApplyResources(Me.lblYourMusic, "lblYourMusic")
+        Me.lblYourMusic.Name = "lblYourMusic"
+        '
+        'HtracksCollection
+        '
+        resources.ApplyResources(Me.HtracksCollection, "HtracksCollection")
+        Me.HtracksCollection.Name = "HtracksCollection"
         '
         'queuePage
         '
@@ -221,7 +280,8 @@ Partial Class MainPlayer
         '
         'AlbumHeader
         '
-        Me.AlbumHeader.Controls.Add(Me.AlbumPlay)
+        Me.AlbumHeader.Controls.Add(Me.AlbumbtnOptions)
+        Me.AlbumHeader.Controls.Add(Me.AlbumbtnPlay)
         Me.AlbumHeader.Controls.Add(Me.AlbumLabel)
         Me.AlbumHeader.Controls.Add(Me.AlbumCover)
         Me.AlbumHeader.Controls.Add(Me.AlbumTracks)
@@ -230,11 +290,17 @@ Partial Class MainPlayer
         resources.ApplyResources(Me.AlbumHeader, "AlbumHeader")
         Me.AlbumHeader.Name = "AlbumHeader"
         '
-        'AlbumPlay
+        'AlbumbtnOptions
         '
-        resources.ApplyResources(Me.AlbumPlay, "AlbumPlay")
-        Me.AlbumPlay.Name = "AlbumPlay"
-        Me.AlbumPlay.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.AlbumbtnOptions, "AlbumbtnOptions")
+        Me.AlbumbtnOptions.Name = "AlbumbtnOptions"
+        Me.AlbumbtnOptions.UseVisualStyleBackColor = True
+        '
+        'AlbumbtnPlay
+        '
+        resources.ApplyResources(Me.AlbumbtnPlay, "AlbumbtnPlay")
+        Me.AlbumbtnPlay.Name = "AlbumbtnPlay"
+        Me.AlbumbtnPlay.UseVisualStyleBackColor = True
         '
         'AlbumLabel
         '
@@ -243,9 +309,42 @@ Partial Class MainPlayer
         '
         'AlbumCover
         '
+        Me.AlbumCover.ContextMenuStrip = Me.AlbumMenuStrip
         resources.ApplyResources(Me.AlbumCover, "AlbumCover")
         Me.AlbumCover.Name = "AlbumCover"
         Me.AlbumCover.TabStop = False
+        '
+        'AlbumMenuStrip
+        '
+        Me.AlbumMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PlayToolStripMenuItem, Me.AlbumInfoToolStripMenuItem, Me.AddToQueueToolStripMenuItem, Me.AddToPlaylistToolStripMenuItem})
+        Me.AlbumMenuStrip.Name = "rightClickMenu"
+        resources.ApplyResources(Me.AlbumMenuStrip, "AlbumMenuStrip")
+        '
+        'PlayToolStripMenuItem
+        '
+        Me.PlayToolStripMenuItem.Name = "PlayToolStripMenuItem"
+        resources.ApplyResources(Me.PlayToolStripMenuItem, "PlayToolStripMenuItem")
+        '
+        'AlbumInfoToolStripMenuItem
+        '
+        Me.AlbumInfoToolStripMenuItem.Name = "AlbumInfoToolStripMenuItem"
+        resources.ApplyResources(Me.AlbumInfoToolStripMenuItem, "AlbumInfoToolStripMenuItem")
+        '
+        'AddToQueueToolStripMenuItem
+        '
+        Me.AddToQueueToolStripMenuItem.Name = "AddToQueueToolStripMenuItem"
+        resources.ApplyResources(Me.AddToQueueToolStripMenuItem, "AddToQueueToolStripMenuItem")
+        '
+        'AddToPlaylistToolStripMenuItem
+        '
+        Me.AddToPlaylistToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AlbumtxtNewPlaylist})
+        Me.AddToPlaylistToolStripMenuItem.Name = "AddToPlaylistToolStripMenuItem"
+        resources.ApplyResources(Me.AddToPlaylistToolStripMenuItem, "AddToPlaylistToolStripMenuItem")
+        '
+        'AlbumtxtNewPlaylist
+        '
+        Me.AlbumtxtNewPlaylist.Name = "AlbumtxtNewPlaylist"
+        resources.ApplyResources(Me.AlbumtxtNewPlaylist, "AlbumtxtNewPlaylist")
         '
         'AlbumTracks
         '
@@ -255,6 +354,7 @@ Partial Class MainPlayer
         'AlbumName
         '
         resources.ApplyResources(Me.AlbumName, "AlbumName")
+        Me.AlbumName.ContextMenuStrip = Me.AlbumMenuStrip
         Me.AlbumName.Name = "AlbumName"
         '
         'AlbumArtists
@@ -317,6 +417,18 @@ Partial Class MainPlayer
         resources.ApplyResources(Me.PlaylistArtists, "PlaylistArtists")
         Me.PlaylistArtists.Name = "PlaylistArtists"
         '
+        'settingsPage
+        '
+        Me.settingsPage.Controls.Add(Me.settingsFlowPanel)
+        resources.ApplyResources(Me.settingsPage, "settingsPage")
+        Me.settingsPage.Name = "settingsPage"
+        Me.settingsPage.UseVisualStyleBackColor = True
+        '
+        'settingsFlowPanel
+        '
+        resources.ApplyResources(Me.settingsFlowPanel, "settingsFlowPanel")
+        Me.settingsFlowPanel.Name = "settingsFlowPanel"
+        '
         'HtilesList
         '
         resources.ApplyResources(Me.HtilesList, "HtilesList")
@@ -325,21 +437,8 @@ Partial Class MainPlayer
         'tilesBar
         '
         Me.tilesBar.Controls.Add(Me.HtilesList)
-        Me.tilesBar.Controls.Add(Me.Panel14)
         resources.ApplyResources(Me.tilesBar, "tilesBar")
         Me.tilesBar.Name = "tilesBar"
-        '
-        'Panel14
-        '
-        Me.Panel14.Controls.Add(Me.Panel16)
-        Me.Panel14.Controls.Add(Me.Panel15)
-        resources.ApplyResources(Me.Panel14, "Panel14")
-        Me.Panel14.Name = "Panel14"
-        '
-        'Panel16
-        '
-        resources.ApplyResources(Me.Panel16, "Panel16")
-        Me.Panel16.Name = "Panel16"
         '
         'Panel15
         '
@@ -363,32 +462,13 @@ Partial Class MainPlayer
         'Panel2
         '
         resources.ApplyResources(Me.Panel2, "Panel2")
+        Me.Panel2.Controls.Add(Me.Panel1)
         Me.Panel2.Controls.Add(Me.NPalbumCover)
+        Me.Panel2.Controls.Add(Me.Panel9)
         Me.Panel2.Controls.Add(Me.NPtrackName)
         Me.Panel2.Controls.Add(Me.NPalbumYear)
         Me.Panel2.Controls.Add(Me.NPartist)
         Me.Panel2.Name = "Panel2"
-        '
-        'NPalbumCover
-        '
-        resources.ApplyResources(Me.NPalbumCover, "NPalbumCover")
-        Me.NPalbumCover.Name = "NPalbumCover"
-        Me.NPalbumCover.TabStop = False
-        '
-        'NPtrackName
-        '
-        resources.ApplyResources(Me.NPtrackName, "NPtrackName")
-        Me.NPtrackName.Name = "NPtrackName"
-        '
-        'NPalbumYear
-        '
-        resources.ApplyResources(Me.NPalbumYear, "NPalbumYear")
-        Me.NPalbumYear.Name = "NPalbumYear"
-        '
-        'NPartist
-        '
-        resources.ApplyResources(Me.NPartist, "NPartist")
-        Me.NPartist.Name = "NPartist"
         '
         'Panel1
         '
@@ -443,6 +523,48 @@ Partial Class MainPlayer
         Me.NPpausePlay.Name = "NPpausePlay"
         Me.NPpausePlay.TabStop = False
         '
+        'NPalbumCover
+        '
+        resources.ApplyResources(Me.NPalbumCover, "NPalbumCover")
+        Me.NPalbumCover.Name = "NPalbumCover"
+        Me.NPalbumCover.TabStop = False
+        '
+        'Panel9
+        '
+        Me.Panel9.Controls.Add(Me.NPvolumeImg)
+        Me.Panel9.Controls.Add(Me.NPvolume)
+        resources.ApplyResources(Me.Panel9, "Panel9")
+        Me.Panel9.Name = "Panel9"
+        '
+        'NPvolumeImg
+        '
+        resources.ApplyResources(Me.NPvolumeImg, "NPvolumeImg")
+        Me.NPvolumeImg.Name = "NPvolumeImg"
+        Me.NPvolumeImg.TabStop = False
+        '
+        'NPvolume
+        '
+        resources.ApplyResources(Me.NPvolume, "NPvolume")
+        Me.NPvolume.Maximum = 100
+        Me.NPvolume.Name = "NPvolume"
+        Me.NPvolume.TickStyle = System.Windows.Forms.TickStyle.None
+        Me.NPvolume.Value = 50
+        '
+        'NPtrackName
+        '
+        resources.ApplyResources(Me.NPtrackName, "NPtrackName")
+        Me.NPtrackName.Name = "NPtrackName"
+        '
+        'NPalbumYear
+        '
+        resources.ApplyResources(Me.NPalbumYear, "NPalbumYear")
+        Me.NPalbumYear.Name = "NPalbumYear"
+        '
+        'NPartist
+        '
+        resources.ApplyResources(Me.NPartist, "NPartist")
+        Me.NPartist.Name = "NPartist"
+        '
         'Panel4
         '
         Me.Panel4.Controls.Add(Me.Panel8)
@@ -486,39 +608,15 @@ Partial Class MainPlayer
         resources.ApplyResources(Me.NPcurTime, "NPcurTime")
         Me.NPcurTime.Name = "NPcurTime"
         '
-        'Panel9
-        '
-        Me.Panel9.Controls.Add(Me.PictureBox1)
-        Me.Panel9.Controls.Add(Me.NPvolume)
-        resources.ApplyResources(Me.Panel9, "Panel9")
-        Me.Panel9.Name = "Panel9"
-        '
-        'PictureBox1
-        '
-        resources.ApplyResources(Me.PictureBox1, "PictureBox1")
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.TabStop = False
-        '
-        'NPvolume
-        '
-        resources.ApplyResources(Me.NPvolume, "NPvolume")
-        Me.NPvolume.Maximum = 100
-        Me.NPvolume.Name = "NPvolume"
-        Me.NPvolume.TickStyle = System.Windows.Forms.TickStyle.None
-        Me.NPvolume.Value = 50
-        '
         'Panel10
         '
         resources.ApplyResources(Me.Panel10, "Panel10")
-        Me.Panel10.Controls.Add(Me.Panel1)
-        Me.Panel10.Controls.Add(Me.Panel2)
         Me.Panel10.Name = "Panel10"
         '
         'nowPlaying
         '
         Me.nowPlaying.Controls.Add(Me.Panel4)
         Me.nowPlaying.Controls.Add(Me.Panel10)
-        Me.nowPlaying.Controls.Add(Me.Panel9)
         resources.ApplyResources(Me.nowPlaying, "nowPlaying")
         Me.nowPlaying.Name = "nowPlaying"
         '
@@ -565,9 +663,51 @@ Partial Class MainPlayer
         'Panel17
         '
         Me.Panel17.Controls.Add(Me.MainPlayerPages)
-        Me.Panel17.Controls.Add(Me.StatusStrip)
+        Me.Panel17.Controls.Add(Me.panelSideDrawer)
+        Me.Panel17.Controls.Add(Me.Panel3)
         resources.ApplyResources(Me.Panel17, "Panel17")
         Me.Panel17.Name = "Panel17"
+        '
+        'panelSideDrawer
+        '
+        Me.panelSideDrawer.Controls.Add(Me.tilesBar)
+        Me.panelSideDrawer.Controls.Add(Me.Panel12)
+        resources.ApplyResources(Me.panelSideDrawer, "panelSideDrawer")
+        Me.panelSideDrawer.Name = "panelSideDrawer"
+        '
+        'Panel12
+        '
+        Me.Panel12.Controls.Add(Me.Panel11)
+        Me.Panel12.Controls.Add(Me.Panel15)
+        resources.ApplyResources(Me.Panel12, "Panel12")
+        Me.Panel12.Name = "Panel12"
+        '
+        'Panel11
+        '
+        resources.ApplyResources(Me.Panel11, "Panel11")
+        Me.Panel11.Controls.Add(Me.txtSearchMusic)
+        Me.Panel11.Controls.Add(Me.panelViewTiles)
+        Me.Panel11.Controls.Add(Me.Panel2)
+        Me.Panel11.Name = "Panel11"
+        '
+        'txtSearchMusic
+        '
+        Me.txtSearchMusic.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtSearchMusic.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList
+        resources.ApplyResources(Me.txtSearchMusic, "txtSearchMusic")
+        Me.txtSearchMusic.Name = "txtSearchMusic"
+        '
+        'panelViewTiles
+        '
+        resources.ApplyResources(Me.panelViewTiles, "panelViewTiles")
+        Me.panelViewTiles.Name = "panelViewTiles"
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.Transparent
+        Me.Panel3.Controls.Add(Me.StatusStrip)
+        resources.ApplyResources(Me.Panel3, "Panel3")
+        Me.Panel3.Name = "Panel3"
         '
         'StatusStrip
         '
@@ -586,32 +726,34 @@ Partial Class MainPlayer
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
         Me.Controls.Add(Me.Panel17)
-        Me.Controls.Add(Me.tilesBar)
         Me.Controls.Add(Me.borderPanel)
         Me.Controls.Add(Me.nowPlaying)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "MainPlayer"
         Me.ShowIcon = False
         Me.MainPlayerPages.ResumeLayout(False)
+        Me.loadPage.ResumeLayout(False)
         Me.homePage.ResumeLayout(False)
         Me.homePage.PerformLayout()
+        Me.trackPage.ResumeLayout(False)
+        Me.trackPage.PerformLayout()
         Me.queuePage.ResumeLayout(False)
         Me.queuePage.PerformLayout()
         Me.albumPage.ResumeLayout(False)
         Me.AlbumHeader.ResumeLayout(False)
         Me.AlbumHeader.PerformLayout()
         CType(Me.AlbumCover, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.AlbumMenuStrip.ResumeLayout(False)
         Me.playlistPage.ResumeLayout(False)
         Me.PlaylistHeader.ResumeLayout(False)
         Me.PlaylistHeader.PerformLayout()
+        Me.settingsPage.ResumeLayout(False)
         Me.tilesBar.ResumeLayout(False)
-        Me.Panel14.ResumeLayout(False)
         Me.Panel15.ResumeLayout(False)
         CType(Me.tileNextPage, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tilePrevPage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.NPalbumCover, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         CType(Me.NPqueue, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NPrepeat, System.ComponentModel.ISupportInitialize).EndInit()
@@ -619,6 +761,11 @@ Partial Class MainPlayer
         CType(Me.NPNextTrack, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NPPrevTrack, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NPpausePlay, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NPalbumCover, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel9.ResumeLayout(False)
+        Me.Panel9.PerformLayout()
+        CType(Me.NPvolumeImg, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NPvolume, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel8.ResumeLayout(False)
         Me.Panel8.PerformLayout()
@@ -627,11 +774,6 @@ Partial Class MainPlayer
         Me.Panel6.PerformLayout()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
-        Me.Panel9.ResumeLayout(False)
-        Me.Panel9.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NPvolume, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel10.ResumeLayout(False)
         Me.nowPlaying.ResumeLayout(False)
         Me.nowPlaying.PerformLayout()
         Me.Panel7.ResumeLayout(False)
@@ -641,7 +783,13 @@ Partial Class MainPlayer
         Me.borderPanel.ResumeLayout(False)
         Me.borderPanel.PerformLayout()
         Me.Panel17.ResumeLayout(False)
-        Me.Panel17.PerformLayout()
+        Me.panelSideDrawer.ResumeLayout(False)
+        Me.Panel12.ResumeLayout(False)
+        Me.Panel12.PerformLayout()
+        Me.Panel11.ResumeLayout(False)
+        Me.Panel11.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.StatusStrip.ResumeLayout(False)
         Me.StatusStrip.PerformLayout()
         Me.ResumeLayout(False)
@@ -670,7 +818,7 @@ Partial Class MainPlayer
     Friend WithEvents Panel5 As Panel
     Friend WithEvents NPcurTime As Label
     Friend WithEvents Panel9 As Panel
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents NPvolumeImg As PictureBox
     Friend WithEvents NPvolume As TrackBar
     Friend WithEvents Panel10 As Panel
     Friend WithEvents nowPlaying As Panel
@@ -680,10 +828,7 @@ Partial Class MainPlayer
     Friend WithEvents loadPage As TabPage
     Friend WithEvents tilesBar As Panel
     Friend WithEvents HtilesList As FlowLayoutPanel
-    Friend WithEvents HtracksCollection As Panel
-    Friend WithEvents Panel14 As Panel
     Friend WithEvents Panel15 As Panel
-    Friend WithEvents Panel16 As Panel
     Friend WithEvents tileNextPage As PictureBox
     Friend WithEvents tilePrevPage As PictureBox
     Friend WithEvents albumPage As TabPage
@@ -694,7 +839,7 @@ Partial Class MainPlayer
     Friend WithEvents AlbumTracks As Label
     Friend WithEvents AlbumTracksCollection As Panel
     Friend WithEvents AlbumLabel As Label
-    Friend WithEvents AlbumPlay As Button
+    Friend WithEvents AlbumbtnPlay As Button
     Friend WithEvents playlistPage As TabPage
     Friend WithEvents PlaylistTracksCollection As Panel
     Friend WithEvents PlaylistHeader As Panel
@@ -716,4 +861,25 @@ Partial Class MainPlayer
     Friend WithEvents QtracksCollection As Panel
     Friend WithEvents HplaylistCardReel As FlowLayoutPanel
     Friend WithEvents QplayingFrom As Label
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents ProgressBar1 As ProgressBar
+    Friend WithEvents trackPage As TabPage
+    Friend WithEvents lblYourMusicSub As Label
+    Friend WithEvents lblYourMusic As Label
+    Friend WithEvents HtracksCollection As Panel
+    Friend WithEvents HsuggestionsCardReel As FlowLayoutPanel
+    Friend WithEvents panelSideDrawer As Panel
+    Friend WithEvents Panel12 As Panel
+    Friend WithEvents panelViewTiles As FlowLayoutPanel
+    Friend WithEvents Panel11 As Panel
+    Friend WithEvents settingsPage As TabPage
+    Friend WithEvents settingsFlowPanel As FlowLayoutPanel
+    Friend WithEvents txtSearchMusic As TextBox
+    Friend WithEvents AlbumMenuStrip As ContextMenuStrip
+    Friend WithEvents PlayToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AlbumInfoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AddToQueueToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AddToPlaylistToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AlbumtxtNewPlaylist As ToolStripTextBox
+    Friend WithEvents AlbumbtnOptions As Button
 End Class

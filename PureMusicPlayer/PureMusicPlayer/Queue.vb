@@ -2,6 +2,8 @@
 
 Public Class Queue
     Public tracks As New List(Of Track)
+    Private upComingLower As Integer
+    Private upComingUpper As Integer
     Public location As Integer = -1
     Public _shuffle As Boolean
     Public _repeat As Boolean
@@ -10,7 +12,7 @@ Public Class Queue
     Public Class QueueData
         Public type As QueueType
         Public args As Object()
-        Public Sub New(ByVal type As QueueType, Optional ByVal args As Object() = Nothing)
+        Public Sub New(ByVal type As QueueType, ParamArray args As Object())
             With Me
                 .type = type
                 If args IsNot Nothing Then
@@ -104,7 +106,7 @@ Public Class Queue
             End If
         End Set
     End Property
-    Public Sub play(Optional ByVal shift As Integer = 0, Optional ByVal start As Integer = -999, Optional ByVal stopCurrent As Boolean = True)
+    Public Sub play(Optional ByVal shift As Integer = 0, Optional ByVal start As Integer = -999, Optional ByVal stopCurrent As Boolean = True, Optional ByVal countPlay As Boolean = False)
         Dim time As Integer
         If location >= 0 And location < tracks.Count And stopCurrent Then
             time = trackPlaying.Time
@@ -127,6 +129,10 @@ Public Class Queue
                 location += shift
             End If
         End If
+        If location > upComingUpper Or location < upComingLower Then
+            upComingUpper = -1
+            upComingUpper = -1
+        End If
         If location >= tracks.Count And tracks.Count > 0 Then
             location = 0
             trackPlaying.Play()
@@ -141,7 +147,7 @@ Public Class Queue
         If start >= tracks.Count Then
             Throw New IndexOutOfRangeException("The specified start location is out of the bounds of the queue")
         End If
-        trackPlaying.Play()
+        trackPlaying.Play(countPlay)
         playing = True
         MainPlayer.notifyQueue()
     End Sub
@@ -178,7 +184,10 @@ Public Class Queue
             Exit Sub
         End If
         Dim cur As Track = tracks(location)
-        pause()
+        Dim resumeQueue As Boolean = playing
+        If resumeQueue Then
+            pause()
+        End If
         Dim newq As New List(Of Track)
         If _shuffle And Not forceShuffle Then
             For i = 0 To Track.tracks.Count - 1
@@ -227,7 +236,9 @@ Public Class Queue
             location = 0
         End If
         tracks = newq
-        [resume]()
+        If resumeQueue Then
+            [resume]()
+        End If
     End Sub
     Public Function canPlay() As Boolean
         If tracks.Count > 0 And location < tracks.Count And location >= 0 Then
@@ -294,4 +305,27 @@ Public Class Queue
         Next
         Return list
     End Function
+    Public Function getUpcomingTracks() As List(Of Track)
+        Dim list As New List(Of Track)
+        If upComingLower >= 0 And upComingUpper >= 0 Then
+            For i = upComingLower To upComingUpper
+                list.Add(tracks(i))
+            Next
+        End If
+        Return list
+    End Function
+    Public Sub addToUpcoming(ParamArray array() As Track)
+        If canPlay() And array.Length > 0 Then
+            pause()
+            upComingLower = location + 1
+            Dim element As Integer
+            For nextLoc = location + 1 To location + array.Length
+                tracks.Insert(nextLoc, array(element))
+                element += 1
+            Next
+            upComingUpper = location + array.Length
+            MainPlayer.notifyQueue()
+            [resume]()
+        End If
+    End Sub
 End Class

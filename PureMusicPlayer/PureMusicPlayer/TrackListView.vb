@@ -11,6 +11,10 @@
         _year.ForeColor = ColorTranslator.FromHtml("#8C8C8C")
         _duration.ForeColor = ColorTranslator.FromHtml("#8C8C8C")
         _separator.BackColor = ColorTranslator.FromHtml("#232323")
+        list.HorizontalScroll.Enabled = False
+        list.HorizontalScroll.Visible = False
+        list.VerticalScroll.Enabled = True
+        list.VerticalScroll.Visible = True
     End Sub
     Const scrollAmount As Integer = 10
     Private Sub scrollUp()

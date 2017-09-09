@@ -29,6 +29,7 @@ Partial Class PlaylistCard
         Me.Cover2 = New System.Windows.Forms.PictureBox()
         Me.PlaylistName = New System.Windows.Forms.Label()
         Me.playPause = New System.Windows.Forms.PictureBox()
+        Me.lblCardType = New System.Windows.Forms.Label()
         CType(Me.Cover1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayout.SuspendLayout()
         CType(Me.Cover4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -105,27 +106,40 @@ Partial Class PlaylistCard
         Me.PlaylistName.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.PlaylistName.AutoSize = True
         Me.PlaylistName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PlaylistName.Location = New System.Drawing.Point(42, 135)
+        Me.PlaylistName.Location = New System.Drawing.Point(50, 165)
         Me.PlaylistName.Name = "PlaylistName"
         Me.PlaylistName.Size = New System.Drawing.Size(103, 20)
         Me.PlaylistName.TabIndex = 2
         Me.PlaylistName.Text = "Playlist Name"
-        Me.PlaylistName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.PlaylistName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'playPause
         '
         Me.playPause.Image = Global.PureMusicPlayer.My.Resources.Resources.play_button
-        Me.playPause.Location = New System.Drawing.Point(45, 32)
+        Me.playPause.Location = New System.Drawing.Point(10, 160)
         Me.playPause.Name = "playPause"
-        Me.playPause.Size = New System.Drawing.Size(100, 100)
+        Me.playPause.Size = New System.Drawing.Size(30, 30)
         Me.playPause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.playPause.TabIndex = 3
         Me.playPause.TabStop = False
+        '
+        'lblCardType
+        '
+        Me.lblCardType.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.lblCardType.AutoSize = True
+        Me.lblCardType.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCardType.Location = New System.Drawing.Point(10, 10)
+        Me.lblCardType.Name = "lblCardType"
+        Me.lblCardType.Size = New System.Drawing.Size(57, 20)
+        Me.lblCardType.TabIndex = 7
+        Me.lblCardType.Text = "Playlist"
+        Me.lblCardType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'PlaylistCard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.lblCardType)
         Me.Controls.Add(Me.playPause)
         Me.Controls.Add(Me.PlaylistName)
         Me.Controls.Add(Me.TableLayout)
@@ -148,4 +162,5 @@ Partial Class PlaylistCard
     Friend WithEvents Cover2 As PictureBox
     Friend WithEvents PlaylistName As Label
     Friend WithEvents playPause As PictureBox
+    Friend WithEvents lblCardType As Label
 End Class
