@@ -3,6 +3,12 @@ Enjoy your music wherever you are! (At least that's the plan)
 
 ![HomePage ScreenShot](https://s26.postimg.org/n6yq3q1rt/Capture.png)
 
+![MyMusic ScreenShot](https://s26.postimg.org/o49qqc2nt/Capture.png)
+
+![Playlist ScreenShot](https://s26.postimg.org/6bjl4pw1l/Capture2.png)
+
+![Album ScreenShot](https://s26.postimg.org/cdr7v7khl/Capture3.png)
+
 PurePlayer is a project I've been working on in my spare time. It is built on VisualBasic and compiled in Visual Studio 2015 Community. If you would like to help contribute to PurePlayer, here is a detailed explanation of what each class does:
 
 * **PurePlayer**:
