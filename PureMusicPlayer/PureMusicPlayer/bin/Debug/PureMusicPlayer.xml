@@ -6,6 +6,69 @@ PureMusicPlayer
 </name>
 </assembly>
 <members>
+<member name="T:PureMusicPlayer.EasyJSON">
+ <summary>
+ EasyJSON is a class created to help simplify the JSON process.
+ No need to create new Objects for each item you want to add.
+ Simply use: foo.putGeneric(value) or foo.putGeneric(key, value) or foo.putArray(key, values...) or foo.putStructure("key").
+ You can also add items inline. For example:
+ <para>
+ EasyJSON json = EasyJSON.create("EasyJSON Example");
+ </para>
+ <para>
+ json.putStructure("pets").putArray("dogs").putGeneric("pug");
+ </para>
+ <para>
+ json.search("pets", "dogs").putGeneric("rottweiler");
+ </para>
+ <para>
+ json.search("pets").putArray("cats", "i'm not a cat guy");
+ </para>
+ <para>
+ will result in a structure like this:
+ </para>
+ <para>
+ "EasyJSON Example":{
+ </para>
+ <para>
+ "pets":{
+ </para>
+ <para>
+ "cats":["i'm not a cat guy"],
+ </para>
+ <para>
+ "dogs":["pug", "rottweiler"]
+ </para>
+ <para>
+ }
+ </para>
+ <para>
+ }
+ </para>
+ <para>
+ Initial commit by Victor Olaitan on 09/03/2017.
+ </para>
+ </summary>
+</member>
+<member name="M:PureMusicPlayer.EasyJSON.create">
+ <summary>
+ Creates an empty EasyJSON instance.
+ 
+ @return
+ </summary>
+</member>
+<member name="M:PureMusicPlayer.EasyJSON.open(System.String)">
+ <summary>
+ Reads the specified file and attempts to parse it into an EasyJSON structure.
+ </summary>
+ <param name="filePath"> The path of the file relative to the Java instance (or full path ie. c: .... ) </param>
+ <returns> The parsed EasyJSON structure </returns>
+ <exception cref="T:System.IO.IOException">    if the file cannot be read. </exception>
+ <exception cref="T:PureMusicPlayer.EasyJSON.ParseException"> if the file's JSON structure is incompatible with EasyJSON. </exception>
+</member>
+<member name="T:PureMusicPlayer.EasyJSON.ParseException">
+ 
+</member>
 <member name="M:PureMusicPlayer.Track.Pause">
  <summary>
  Pause the current play back.
@@ -220,6 +283,16 @@ PureMusicPlayer
 </summary>
 </member>
 <member name="P:PureMusicPlayer.My.Resources.Resources.shuffle_icon_on">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.soundcloud_linear">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PureMusicPlayer.My.Resources.Resources.spotify_bright">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
